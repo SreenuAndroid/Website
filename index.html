@@ -3,96 +3,141 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Apps by Modern Mobile Tools</title>
+  <title>Modern Mobile Tools</title>
   <style>
+    * { box-sizing: border-box; }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f9f9f9;
+      background: #f9fafb;
       color: #333;
     }
     header {
-      background: #6200ea;
+      background: #4f46e5;
       color: white;
-      padding: 1rem 2rem;
+      padding: 2rem;
       text-align: center;
     }
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
     main {
-      max-width: 800px;
+      max-width: 1200px;
       margin: 2rem auto;
       padding: 1rem;
     }
+    section {
+      margin-bottom: 3rem;
+    }
+    h2.section-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 0.3rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
     .app {
       background: white;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-      padding: 1rem 1.5rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
-    .app h2 {
-      margin: 0 0 0.5rem;
+    .app:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    }
+    .app img {
+      width: 72px;
+      height: 72px;
+      border-radius: 16px;
+      margin-bottom: 0.75rem;
+      background: #eee;
+    }
+    .app h3 {
+      font-size: 1.1rem;
+      margin: 0.5rem 0;
+    }
+    .app p {
+      font-size: 0.9rem;
+      color: #555;
+      margin: 0.5rem 0 1rem;
     }
     .app a {
-      display: inline-block;
-      margin-top: 0.5rem;
+      padding: 0.4rem 0.8rem;
       text-decoration: none;
-      color: #6200ea;
-      font-weight: bold;
+      background-color: #4f46e5;
+      color: white;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    .app.disabled a {
+      pointer-events: none;
+      background-color: #bbb;
+    }
+    .contact, .about {
+      line-height: 1.7;
+    }
+    .contact a {
+      color: #4f46e5;
+      text-decoration: none;
+      font-weight: 500;
     }
     footer {
       text-align: center;
-      margin: 2rem 0;
+      padding: 2rem 1rem;
+      background: #e5e7eb;
       font-size: 0.9rem;
-      color: #666;
+      color: #555;
+    }
+    @media (max-width: 600px) {
+      header h1 { font-size: 2rem; }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Apps by Modern Mobile Tools</h1>
+    <h1>Modern Mobile Tools</h1>
+    <p>Simple, Useful & Privacy-Friendly Android Apps</p>
   </header>
   <main>
-
-    <!-- Apps List Starts Here -->
-    <div class="app"><h2>App Uninstaller Pro</h2><p>Manage and remove apps with ease.</p><a href="https://play.google.com/store/apps/details?id=app.uninstaller" target="_blank">Download</a></div>
-
-    <div class="app"><h2>Audio Video Converter</h2><p>Convert audio to stunning video formats.</p><a href="https://play.google.com/store/apps/details?id=audio.video.converter" target="_blank">Download</a></div>
-
-    <div class="app"><h2>Audio to Video Converter</h2><p>Create video from audio with image background.</p><a href="https://play.google.com/store/apps/details?id=audio.to.video" target="_blank">Download</a></div>
-
-    <div class="app"><h2>BMI Calculator</h2><p>Calculate Body Mass Index quickly and easily.</p><a href="https://play.google.com/store/apps/details?id=bmi.calculator.application" target="_blank">Download</a></div>
-
-    <div class="app"><h2>Compound Interest Calculator</h2><p>Calculate compound interest with flexible options.</p><a href="https://play.google.com/store/apps/details?id=compound.interest.calculator.app" target="_blank">Download</a></div>
-
-    <div class="app"><h2>Diary - Journal, My Diary</h2><p>Write private journals and keep your memories safe.</p><a href="https://play.google.com/store/apps/details?id=mydiary.diary.diarywithlock.diaryjournal.secretdiary.notes.notebook.write.memoir.journal" target="_blank">Download</a></div>
-
-    <div class="app"><h2>EMI Calculator</h2><p>Calculate loan EMIs with various parameters.</p><a href="https://play.google.com/store/apps/details?id=emi.calculator.app" target="_blank">Download</a></div>
-
-    <div class="app"><h2>Flashlight Pro: LED Torch SOS</h2><p>Bright and powerful flashlight with SOS mode.</p><a href="https://play.google.com/store/apps/details?id=flash.light.app.latest" target="_blank">Download</a></div>
-
-    <div class="app"><h2>Gold Ledger - Orders & Pawn</h2><p>Track jewelry orders and pawn transactions.</p><a href="https://play.google.com/store/apps/details?id=inventory.manager" target="_blank">Download</a></div>
-
-    <div class="app"><h2>Housie Tambola Number Caller</h2><p>Voice-based number caller for Housie and Tambola games.</p><a href="https://play.google.com/store/apps/details?id=housie.tambola.caller" target="_blank">Download</a></div>
-
-    <div class="app"><h2>Interest Calculator</h2><p>Calculate interest for loans and deposits with ease.</p><a href="https://play.google.com/store/apps/details?id=interest.calculator.app" target="_blank">Download</a></div>
-
-    <div class="app"><h2>Memorize - Journal, Diary</h2><p>A minimal journal app for daily notes and memories.</p><a href="https://play.google.com/store/apps/details?id=com.fairapps.memorize" target="_blank">Download</a></div>
-
-    <div class="app"><h2>Mp3 to Mp4 Converter App</h2><p>Convert MP3 to MP4 with custom images.</p><a href="https://play.google.com/store/apps/details?id=mp3.to.mp4.converter" target="_blank">Download</a></div>
-
-    <div class="app"><h2>Mp3 to Video Converter</h2><p>Create video content from MP3 with image support.</p><a href="https://play.google.com/store/apps/details?id=mp3.to.video" target="_blank">Download</a></div>
-
-    <div class="app"><h2>Periodic Table Pro: Elements</h2><p>Explore detailed information about chemical elements.</p><a href="https://play.google.com/store/apps/details?id=periodic.table.app.latest" target="_blank">Download</a></div>
-
-    <div class="app"><h2>Photo Resize & Compress</h2><p>Resize and compress images for fast sharing.</p><a href="https://play.google.com/store/apps/details?id=image.resizer" target="_blank">Download</a></div>
-
-    <div class="app"><h2>Photo Shorts Maker with Music</h2><p>Create short videos with photos and music.</p><a href="https://play.google.com/store/apps/details?id=shorts.video.maker" target="_blank">Download</a></div>
-
-    <div class="app"><h2>QR & Barcode Scanner</h2><p>Scan QR codes and barcodes fast and free.</p><a href="https://play.google.com/store/apps/details?id=com.fairapps.scanner" target="_blank">Download</a></div>
-
-    <div class="app"><h2>Voice Recorder</h2><p>High quality voice recording with easy UI.</p><a href="https://play.google.com/store/apps/details?id=voice.recorder.app.latest" target="_blank">Download</a></div>
-
+    <section>
+      <h2 class="section-title">Our Apps</h2>
+      <div class="grid">
+        <!-- App entries will be added here dynamically -->
+      </div>
+    </section>
+    <section class="about">
+      <h2 class="section-title">About Us</h2>
+      <p>
+        At Modern Mobile Tools, we build high-quality Android apps that are clean, useful,
+        and respect your privacy. From productivity tools to media utilities,
+        our apps are designed to make your mobile experience simpler and better.
+      </p>
+    </section>
+    <section class="contact">
+      <h2 class="section-title">Contact Us</h2>
+      <p>
+        📧 Email: <a href="mailto:modernmobiletools@gmail.com">modernmobiletools@gmail.com</a><br/>
+        🐦 Twitter: <a href="https://twitter.com/modernmobiletools" target="_blank">@modernmobiletools</a><br/>
+        💻 GitHub: <a href="https://github.com/modernmobiletools" target="_blank">github.com/modernmobiletools</a><br/>
+        📦 Play Store: <a href="https://play.google.com/store/apps/dev?id=YOUR_DEVELOPER_ID" target="_blank">All Apps on Google Play</a>
+      </p>
+    </section>
   </main>
   <footer>
     &copy; 2025 Modern Mobile Tools. All rights reserved.
