@@ -1,290 +1,445 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Modern Mobile Tools</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      background: #f9fafb;
-      color: #333;
-    }
-    header {
-      background: #4f46e5;
-      color: white;
-      padding: 2rem;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      margin: 0;
-    }
-    header p {
-      font-size: 1.1rem;
-      opacity: 0.9;
-    }
-    main {
-      max-width: 1200px;
-      margin: 2rem auto;
-      padding: 1rem;
-    }
-    section {
-      margin-bottom: 3rem;
-    }
-    h2.section-title {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 0.3rem;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-    .app {
-      background: white;
-      border-radius: 12px;
-      padding: 1rem;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-    .app:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-    }
-    .app img {
-      width: 72px;
-      height: 72px;
-      border-radius: 16px;
-      margin-bottom: 0.75rem;
-      background: #eee;
-    }
-    .app h3 {
-      font-size: 1.1rem;
-      margin: 0.5rem 0;
-    }
-    .app p {
-      font-size: 0.9rem;
-      color: #555;
-      margin: 0.5rem 0 1rem;
-    }
-    .app a {
-      padding: 0.4rem 0.8rem;
-      text-decoration: none;
-      background-color: #4f46e5;
-      color: white;
-      border-radius: 6px;
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-    .app.disabled a {
-      pointer-events: none;
-      background-color: #bbb;
-    }
-    .contact, .about {
-      line-height: 1.7;
-    }
-    .contact a {
-      color: #4f46e5;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      background: #e5e7eb;
-      font-size: 0.9rem;
-      color: #555;
-    }
-    @media (max-width: 600px) {
-      header h1 { font-size: 2rem; }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Modern Mobile Tools</h1>
-    <p>Simple, Useful & Privacy-Friendly Android Apps</p>
-  </header>
-  <main>
-    <section>
-      <h2 class="section-title">Our Apps</h2>
-      <div class="grid">
-        <!-- App entries will be added here dynamically -->
-<div class="app">  <img src="https://play-lh.googleusercontent.com/slMcjW_J6BwBEUUTbqaCPQvpshNHgo4Vz5UA6R-5j5OhYIlXiPbaJUdZlZ725-aC8Q=w480-h960-rw" alt="App Uninstaller Pro Icon">
-<h2>App Uninstaller Pro</h2> <p>Manage and remove apps with ease.</p> <a target="_blank" rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=app.uninstaller">Download</a></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Mobile Tools</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        background: #f9fafb;
+        color: #333;
+      }
+      header {
+        background: #4f46e5;
+        color: white;
+        padding: 2rem;
+        text-align: center;
+      }
+      header h1 {
+        font-size: 2.5rem;
+        margin: 0;
+      }
+      header p {
+        font-size: 1.1rem;
+        opacity: 0.9;
+      }
+      main {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 1rem;
+      }
+      section {
+        margin-bottom: 3rem;
+      }
+      h2.section-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 0.3rem;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+      }
+      .app {
+        background: white;
+        border-radius: 12px;
+        padding: 1rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .app:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      }
+      .app img {
+        width: 72px;
+        height: 72px;
+        border-radius: 16px;
+        margin-bottom: 0.75rem;
+        background: #eee;
+      }
+      .app h3 {
+        font-size: 1.1rem;
+        margin: 0.5rem 0;
+      }
+      .app p {
+        font-size: 0.9rem;
+        color: #555;
+        margin: 0.5rem 0 1rem;
+      }
+      .app a {
+        padding: 0.4rem 0.8rem;
+        text-decoration: none;
+        background-color: #4f46e5;
+        color: white;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+      .app.disabled a {
+        pointer-events: none;
+        background-color: #bbb;
+      }
+      .contact,
+      .about {
+        line-height: 1.7;
+      }
+      .contact a {
+        color: #4f46e5;
+        text-decoration: none;
+        font-weight: 500;
+      }
+      footer {
+        text-align: center;
+        padding: 2rem 1rem;
+        background: #e5e7eb;
+        font-size: 0.9rem;
+        color: #555;
+      }
+      @media (max-width: 600px) {
+        header h1 {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Modern Mobile Tools</h1>
+      <p>Simple, Useful & Privacy-Friendly Android Apps</p>
+    </header>
+    <main>
+      <section>
+        <h2 class="section-title">Our Apps</h2>
+        <div class="grid">
+          <!-- App entries will be added here dynamically -->
+          <div class="app">
+            <img
+              src="https://play-lh.googleusercontent.com/slMcjW_J6BwBEUUTbqaCPQvpshNHgo4Vz5UA6R-5j5OhYIlXiPbaJUdZlZ725-aC8Q=w480-h960-rw"
+              alt="App Uninstaller Pro Icon"
+            />
+            <h2>App Uninstaller Pro</h2>
+            <p>Manage and remove apps with ease.</p>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://play.google.com/store/apps/details?id=app.uninstaller"
+              >Download</a
+            >
+          </div>
 
-      <div class="app">
-  <img src="https://play-lh.googleusercontent.com/yN8Bh5nsBEuZMWcnYrRu-WUzDnbVnCGIWrLnoYhhupeHlKgnjYegY5QghO3ZRUXTtvg=w480-h960-rw" alt="Audio Video Converter Icon">
-  <h2>Audio Video Converter</h2>
-  <p>Convert audio to stunning video formats.</p>
-  <a href="https://play.google.com/store/apps/details?id=audio.video.converter" target="_blank" rel="noopener noreferrer">Download</a>
-</div>
+          <div class="app">
+            <img
+              src="https://play-lh.googleusercontent.com/yN8Bh5nsBEuZMWcnYrRu-WUzDnbVnCGIWrLnoYhhupeHlKgnjYegY5QghO3ZRUXTtvg=w480-h960-rw"
+              alt="Audio Video Converter Icon"
+            />
+            <h2>Audio Video Converter</h2>
+            <p>Convert audio to stunning video formats.</p>
+            <a
+              href="https://play.google.com/store/apps/details?id=audio.video.converter"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Download</a
+            >
+          </div>
 
+          <div class="app">
+            <img
+              src="https://play-lh.googleusercontent.com/e3geLv2g3FJcfwTZ4GaHBI13fwYSpP2UZ_VOWNTx17grp11GMNb2XotGa8DTro4vbg=w480-h960-rw"
+              alt="Audio to Video Converter Icon"
+            />
+            <h2>Audio to Video Converter</h2>
+            <p>Create video from audio with image background.</p>
+            <a
+              href="https://play.google.com/store/apps/details?id=audio.to.video"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Download</a
+            >
+          </div>
 
-      <div class="app">
-  <img src="https://play-lh.googleusercontent.com/e3geLv2g3FJcfwTZ4GaHBI13fwYSpP2UZ_VOWNTx17grp11GMNb2XotGa8DTro4vbg=w480-h960-rw" alt="Audio to Video Converter Icon">
-  <h2>Audio to Video Converter</h2>
-  <p>Create video from audio with image background.</p>
-  <a href="https://play.google.com/store/apps/details?id=audio.to.video" target="_blank" rel="noopener noreferrer">Download</a>
-</div>
+          <div class="app">
+            <img
+              src="https://play-lh.googleusercontent.com/s6H2XDrgmWPj1L0BLqPIpOEctxy22WWNJwljVqMRD-tSwcpUb7pYOT18XdiEW6Aazy8=w480-h960-rw"
+              alt="BMI Calculator Icon"
+            />
+            <h2>BMI Calculator</h2>
+            <p>Calculate your BMI with ease and precision.</p>
+            <a
+              href="https://play.google.com/store/apps/details?id=bmi.calculator.application"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Download</a
+            >
+          </div>
 
+          <div class="app">
+            <img
+              src="https://play-lh.googleusercontent.com/6C-W1-mdDuCZlZf2V3DXG4Qql6tdrM_CfDnUupBJFYWZ85PI18vplzoN6vQbYFjq1FY=w480-h960-rw"
+              alt="Compound Interest Calculator Icon"
+            />
+            <h2>Compound Interest Calculator</h2>
+            <p>Calculate compound interest with flexible inputs.</p>
+            <a
+              href="https://play.google.com/store/apps/details?id=compound.interest.calculator.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Download</a
+            >
+          </div>
 
-      <div class="app">
-  <img src="https://play-lh.googleusercontent.com/s6H2XDrgmWPj1L0BLqPIpOEctxy22WWNJwljVqMRD-tSwcpUb7pYOT18XdiEW6Aazy8=w480-h960-rw" alt="BMI Calculator Icon">
-  <h2>BMI Calculator</h2>
-  <p>Calculate your BMI with ease and precision.</p>
-  <a href="https://play.google.com/store/apps/details?id=bmi.calculator.application" target="_blank" rel="noopener noreferrer">Download</a>
-</div>
+          <div class="app">
+            <img
+              src="https://play-lh.googleusercontent.com/SwgbcG1cm8sr41YeYLk6rH7mmeFt9PLx5cNoU_fYz964ish94BSQ_IR4JwjG8bhHXw=w480-h960-rw"
+              alt="Diary - Journal, My Diary Icon"
+            />
+            <h2>Diary - Journal, My Diary</h2>
+            <p>Secure journal to write personal thoughts.</p>
+            <a
+              href="https://play.google.com/store/apps/details?id=mydiary.diary.diarywithlock.diaryjournal.secretdiary.notes.notebook.write.memoir.journal"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Download</a
+            >
+          </div>
 
+          <div class="app">
+            <img
+              src="https://play-lh.googleusercontent.com/GaazpL2dxXhQuna1ygZ5ZOs_fyUSGWbz-a88iKb8O-0UItw33aqV1ikaGzgiUmz5bg=w480-h960-rw"
+              alt="EMI Calculator Icon"
+            />
+            <h2>EMI Calculator</h2>
+            <p>Calculate monthly installments quickly.</p>
+            <a
+              href="https://play.google.com/store/apps/details?id=emi.calculator.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Download</a
+            >
+          </div>
 
-      <div class="app">
-  <img src="https://play-lh.googleusercontent.com/6C-W1-mdDuCZlZf2V3DXG4Qql6tdrM_CfDnUupBJFYWZ85PI18vplzoN6vQbYFjq1FY=w480-h960-rw" alt="Compound Interest Calculator Icon">
-  <h2>Compound Interest Calculator</h2>
-  <p>Calculate compound interest with flexible inputs.</p>
-  <a href="https://play.google.com/store/apps/details?id=compound.interest.calculator.app" target="_blank" rel="noopener noreferrer">Download</a>
-</div>
+          <div class="app">
+            <img
+              src="https://play-lh.googleusercontent.com/-hSO-Qexl10W4nlzbtF9hJFUsD7Ner4MYKWM9i8dwcv43i0dC99tqJFvRsEa5180kdQ=w480-h960-rw"
+              alt="Flashlight Pro Icon"
+            />
+            <h2>Flashlight Pro: LED Torch SOS</h2>
+            <p>Powerful flashlight app with SOS functionality.</p>
+            <a
+              href="https://play.google.com/store/apps/details?id=flash.light.app.latest"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Download</a
+            >
+          </div>
 
+          <div class="app">
+            <img
+              src="https://play-lh.googleusercontent.com/sII1cpy8TaEHsB26QZsA4VVcNOZOv_pDCHWfiGwPD1XWYTM6GU5SMYZHPAdJmLbaG94=w480-h960-rw"
+              alt="Gold Ledger Icon"
+            />
+            <h2>Gold Ledger - Orders & Pawn</h2>
+            <p>Track gold orders and pawn records.</p>
+            <a
+              href="https://play.google.com/store/apps/details?id=inventory.manager"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Download</a
+            >
+          </div>
 
-      <div class="app">
-  <img src="https://play-lh.googleusercontent.com/SwgbcG1cm8sr41YeYLk6rH7mmeFt9PLx5cNoU_fYz964ish94BSQ_IR4JwjG8bhHXw=w480-h960-rw" alt="Diary - Journal, My Diary Icon">
-  <h2>Diary - Journal, My Diary</h2>
-  <p>Secure journal to write personal thoughts.</p>
-  <a href="https://play.google.com/store/apps/details?id=mydiary.diary.diarywithlock.diaryjournal.secretdiary.notes.notebook.write.memoir.journal" target="_blank" rel="noopener noreferrer">Download</a>
-</div>
+          <div class="app">
+            <img
+              src="https://play-lh.googleusercontent.com/6fsqLjL2QaWkgU13UYIXiC-tgZg_DiNVeks1p7Ci2YeZWsnMAilDAvDOTJAioIUyH4EdGKyGvr2ej2bC8ICcWeY=w480-h960-rw"
+              alt="Housie Tambola Number Caller Icon"
+            />
+            <h2>Housie Tambola Number Caller</h2>
+            <p>Number caller for Tambola games with voice.</p>
+            <a
+              href="https://play.google.com/store/apps/details?id=housie.tambola.caller"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Download</a
+            >
+          </div>
 
+          <div class="app">
+            <img
+              src="https://play-lh.googleusercontent.com/4cWph5TDb_yk-4f-nUNDY9e3YvP0rVmYwRMnbRQ2PfMeIFuRqSEnx1FcZMXqhNHBx0TV=w480-h960-rw"
+              alt="Interest Calculator Icon"
+            />
+            <h2>Interest Calculator</h2>
+            <p>Calculate interest on loans and deposits.</p>
+            <a
+              href="https://play.google.com/store/apps/details?id=interest.calculator.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Download</a
+            >
+          </div>
 
-      <div class="app">
-  <img src="https://play-lh.googleusercontent.com/GaazpL2dxXhQuna1ygZ5ZOs_fyUSGWbz-a88iKb8O-0UItw33aqV1ikaGzgiUmz5bg=w480-h960-rw" alt="EMI Calculator Icon">
-  <h2>EMI Calculator</h2>
-  <p>Calculate monthly installments quickly.</p>
-  <a href="https://play.google.com/store/apps/details?id=emi.calculator.app" target="_blank" rel="noopener noreferrer">Download</a>
-</div>
+          <div class="app">
+            <img
+              src="https://play-lh.googleusercontent.com/qvSj4BNsmpJ5CUI_qzn-A8W2ChquozofXsOuT7e9WEdR5rJXWRNm0tCkvouNkmSI1RjJ=w480-h960-rw"
+              alt="Memorize - Journal, Diary Icon"
+            />
+            <h2>Memorize - Journal, Diary</h2>
+            <p>Simple app to record daily memories.</p>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.fairapps.memorize"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Download</a
+            >
+          </div>
 
+          <div class="app">
+            <img
+              src="https://play-lh.googleusercontent.com/5ZPmu0XkrpRjKOsQLr11EU4bzapxoWzfwi2FIkXy1jXgNT32ImhYaoHCHaaMECiplEkFa8E8-w1NpI84K0IJ=w480-h960-rw"
+              alt="Mp3 to Mp4 Converter App Icon"
+            />
+            <h2>Mp3 to Mp4 Converter App</h2>
+            <p>Convert MP3 files into video format.</p>
+            <a
+              href="https://play.google.com/store/apps/details?id=mp3.to.mp4.converter"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Download</a
+            >
+          </div>
 
-      <div class="app">
-  <img src="https://play-lh.googleusercontent.com/-hSO-Qexl10W4nlzbtF9hJFUsD7Ner4MYKWM9i8dwcv43i0dC99tqJFvRsEa5180kdQ=w480-h960-rw" alt="Flashlight Pro Icon">
-  <h2>Flashlight Pro: LED Torch SOS</h2>
-  <p>Powerful flashlight app with SOS functionality.</p>
-  <a href="https://play.google.com/store/apps/details?id=flash.light.app.latest" target="_blank" rel="noopener noreferrer">Download</a>
-</div>
+          <div class="app">
+            <img
+              src="https://play-lh.googleusercontent.com/64VmmV_rHDMFVV0VHpSWYQZI_Epr5GycHFsuRBLHJcmv4gTi_lLSg-sbnroeZreJGw=w480-h960-rw"
+              alt="Mp3 to Video Converter Icon"
+            />
+            <h2>Mp3 to Video Converter</h2>
+            <p>Create video clips from audio tracks.</p>
+            <a
+              href="https://play.google.com/store/apps/details?id=mp3.to.video"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Download</a
+            >
+          </div>
 
+          <div class="app">
+            <img
+              src="https://play-lh.googleusercontent.com/C7AWj68JoxJMbgC-McOPxoNebTfMPOaAXNEd7sNkx8EnQjk7JXhfSzhaf2niPTjI9rM=w480-h960-rw"
+              alt="Periodic Table Pro Icon"
+            />
+            <h2>Periodic Table Pro: Elements</h2>
+            <p>Interactive periodic table with details.</p>
+            <a
+              href="https://play.google.com/store/apps/details?id=periodic.table.app.latest"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Download</a
+            >
+          </div>
 
-      <div class="app">
-  <img src="https://play-lh.googleusercontent.com/sII1cpy8TaEHsB26QZsA4VVcNOZOv_pDCHWfiGwPD1XWYTM6GU5SMYZHPAdJmLbaG94=w480-h960-rw" alt="Gold Ledger Icon">
-  <h2>Gold Ledger - Orders & Pawn</h2>
-  <p>Track gold orders and pawn records.</p>
-  <a href="https://play.google.com/store/apps/details?id=inventory.manager" target="_blank" rel="noopener noreferrer">Download</a>
-</div>
+          <div class="app">
+            <img
+              src="https://play-lh.googleusercontent.com/3gUTUR2FAquWLj8YREPEMZwLCUd3OSRy0nEIGpa27LxDTcNzGUPNWIqX1xpUotwSX48=w480-h960-rw"
+              alt="Photo Resize & Compress Icon"
+            />
+            <h2>Photo Resize & Compress</h2>
+            <p>Resize and compress images instantly.</p>
+            <a
+              href="https://play.google.com/store/apps/details?id=image.resizer"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Download</a
+            >
+          </div>
 
+          <div class="app">
+            <img
+              src="https://play-lh.googleusercontent.com/QNqMSuBLEZ2PIr2crQeTtCoEXFi237lZD2VxF1at4alEmLdnNvRZjnzE_ddDcejAYBo=w480-h960-rw"
+              alt="Photo Shorts Maker with Music Icon"
+            />
+            <h2>Photo Shorts Maker with Music</h2>
+            <p>Turn photos into shorts with music.</p>
+            <a
+              href="https://play.google.com/store/apps/details?id=shorts.video.maker"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Download</a
+            >
+          </div>
 
-      <div class="app">
-  <img src="https://play-lh.googleusercontent.com/hpxD4nRayC7SiwKWCHM0c9wXcmEF-8YKcWNxiQ1jZ_FtvSyn-wwX2jvACCHBJqmbXR_xM50_qvEmiiZDbrRUTA=w480-h960-rw" alt="Housie Tambola Number Caller Icon">
-  <h2>Housie Tambola Number Caller</h2>
-  <p>Number caller for Tambola games with voice.</p>
-  <a href="https://play.google.com/store/apps/details?id=housie.tambola.caller" target="_blank" rel="noopener noreferrer">Download</a>
-</div>
+          <div class="app">
+            <img
+              src="https://play-lh.googleusercontent.com/0JwgVjXeACsXfnKFHyE0L4V8aDd9WxypAboUmYABwUUH0WtqTgzkXVvhgecSNkukCaI=w480-h960-rw"
+              alt="QR & Barcode Scanner Icon"
+            />
+            <h2>QR & Barcode Scanner</h2>
+            <p>Scan all types of QR and barcodes.</p>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.fairapps.scanner"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Download</a
+            >
+          </div>
 
-
-      <div class="app">
-  <img src="https://play-lh.googleusercontent.com/4cWph5TDb_yk-4f-nUNDY9e3YvP0rVmYwRMnbRQ2PfMeIFuRqSEnx1FcZMXqhNHBx0TV=w480-h960-rw" alt="Interest Calculator Icon">
-  <h2>Interest Calculator</h2>
-  <p>Calculate interest on loans and deposits.</p>
-  <a href="https://play.google.com/store/apps/details?id=interest.calculator.app" target="_blank" rel="noopener noreferrer">Download</a>
-</div>
-
-
-      <div class="app">
-  <img src="https://play-lh.googleusercontent.com/qvSj4BNsmpJ5CUI_qzn-A8W2ChquozofXsOuT7e9WEdR5rJXWRNm0tCkvouNkmSI1RjJ=w480-h960-rw" alt="Memorize - Journal, Diary Icon">
-  <h2>Memorize - Journal, Diary</h2>
-  <p>Simple app to record daily memories.</p>
-  <a href="https://play.google.com/store/apps/details?id=com.fairapps.memorize" target="_blank" rel="noopener noreferrer">Download</a>
-</div>
-
-
-      <div class="app">
-  <img src="https://play-lh.googleusercontent.com/5ZPmu0XkrpRjKOsQLr11EU4bzapxoWzfwi2FIkXy1jXgNT32ImhYaoHCHaaMECiplEkFa8E8-w1NpI84K0IJ=w480-h960-rw" alt="Mp3 to Mp4 Converter App Icon">
-  <h2>Mp3 to Mp4 Converter App</h2>
-  <p>Convert MP3 files into video format.</p>
-  <a href="https://play.google.com/store/apps/details?id=mp3.to.mp4.converter" target="_blank" rel="noopener noreferrer">Download</a>
-</div>
-
-
-      <div class="app">
-  <img src="https://play-lh.googleusercontent.com/64VmmV_rHDMFVV0VHpSWYQZI_Epr5GycHFsuRBLHJcmv4gTi_lLSg-sbnroeZreJGw=w480-h960-rw" alt="Mp3 to Video Converter Icon">
-  <h2>Mp3 to Video Converter</h2>
-  <p>Create video clips from audio tracks.</p>
-  <a href="https://play.google.com/store/apps/details?id=mp3.to.video" target="_blank" rel="noopener noreferrer">Download</a>
-</div>
-
-
-      <div class="app">
-  <img src="https://play-lh.googleusercontent.com/C7AWj68JoxJMbgC-McOPxoNebTfMPOaAXNEd7sNkx8EnQjk7JXhfSzhaf2niPTjI9rM=w480-h960-rw" alt="Periodic Table Pro Icon">
-  <h2>Periodic Table Pro: Elements</h2>
-  <p>Interactive periodic table with details.</p>
-  <a href="https://play.google.com/store/apps/details?id=periodic.table.app.latest" target="_blank" rel="noopener noreferrer">Download</a>
-</div>
-
-
-      <div class="app">
-  <img src="https://play-lh.googleusercontent.com/3gUTUR2FAquWLj8YREPEMZwLCUd3OSRy0nEIGpa27LxDTcNzGUPNWIqX1xpUotwSX48=w480-h960-rw" alt="Photo Resize & Compress Icon">
-  <h2>Photo Resize & Compress</h2>
-  <p>Resize and compress images instantly.</p>
-  <a href="https://play.google.com/store/apps/details?id=image.resizer" target="_blank" rel="noopener noreferrer">Download</a>
-</div>
-
-
-      <div class="app">
-  <img src="https://play-lh.googleusercontent.com/QNqMSuBLEZ2PIr2crQeTtCoEXFi237lZD2VxF1at4alEmLdnNvRZjnzE_ddDcejAYBo=w480-h960-rw" alt="Photo Shorts Maker with Music Icon">
-  <h2>Photo Shorts Maker with Music</h2>
-  <p>Turn photos into shorts with music.</p>
-  <a href="https://play.google.com/store/apps/details?id=shorts.video.maker" target="_blank" rel="noopener noreferrer">Download</a>
-</div>
-
-
-      <div class="app">
-  <img src="https://play-lh.googleusercontent.com/0JwgVjXeACsXfnKFHyE0L4V8aDd9WxypAboUmYABwUUH0WtqTgzkXVvhgecSNkukCaI=w480-h960-rw" alt="QR & Barcode Scanner Icon">
-  <h2>QR & Barcode Scanner</h2>
-  <p>Scan all types of QR and barcodes.</p>
-  <a href="https://play.google.com/store/apps/details?id=com.fairapps.scanner" target="_blank" rel="noopener noreferrer">Download</a>
-</div>
-
-
-      <div class="app">
-  <img src="https://play-lh.googleusercontent.com/-4FqxNqh3p62Nn_RecbPnOcDBXt1Jy1s_WEVWZnGsXkGwvS7r1xZ8uBrrqZK5bh55t5o=w480-h960-rw" alt="Voice Recorder Icon">
-  <h2>Voice Recorder</h2>
-  <p>High-quality voice recording tool.</p>
-  <a href="https://play.google.com/store/apps/details?id=voice.recorder.app.latest" target="_blank" rel="noopener noreferrer">Download</a>
-</div>
-
-      </div>
-    </section>
-    <section class="about">
-      <h2 class="section-title">About Us</h2>
-      <p>
-        At Modern Mobile Tools, we build high-quality Android apps that are clean, useful,
-        and respect your privacy. From productivity tools to media utilities,
-        our apps are designed to make your mobile experience simpler and better.
-      </p>
-    </section>
-    <section class="contact">
-      <h2 class="section-title">Contact Us</h2>
-      <p>
-        📧 Email: <a target="_blank" rel="noopener noreferrer" href="mailto:fairappsmobile@gmail.com">fairappsmobile@gmail.com</a><br/>
-        📦 Play Store: <a target="_blank" rel="noopener noreferrer" href="https://play.google.com/store/apps/dev?id=6860744363576313870" target="_blank">Download Apps on Google Play</a>
-      </p>
-    </section>
-  </main>
-  <footer>
-    &copy; 2025 Modern Mobile Tools. All rights reserved.
-  </footer>
-</body>
+          <div class="app">
+            <img
+              src="https://play-lh.googleusercontent.com/-4FqxNqh3p62Nn_RecbPnOcDBXt1Jy1s_WEVWZnGsXkGwvS7r1xZ8uBrrqZK5bh55t5o=w480-h960-rw"
+              alt="Voice Recorder Icon"
+            />
+            <h2>Voice Recorder</h2>
+            <p>High-quality voice recording tool.</p>
+            <a
+              href="https://play.google.com/store/apps/details?id=voice.recorder.app.latest"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Download</a
+            >
+          </div>
+        </div>
+      </section>
+      <section class="about">
+        <h2 class="section-title">About Us</h2>
+        <p>
+          At Modern Mobile Tools, we build high-quality Android apps that are
+          clean, useful, and respect your privacy. From productivity tools to
+          media utilities, our apps are designed to make your mobile experience
+          simpler and better.
+        </p>
+      </section>
+      <section class="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <p>
+          📧 Email:
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="mailto:fairappsmobile@gmail.com"
+            >fairappsmobile@gmail.com</a
+          ><br />
+          📦 Play Store:
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://play.google.com/store/apps/dev?id=6860744363576313870"
+            target="_blank"
+            >Download Apps on Google Play</a
+          >
+        </p>
+      </section>
+    </main>
+    <footer>&copy; 2025 Modern Mobile Tools. All rights reserved.</footer>
+  </body>
 </html>
