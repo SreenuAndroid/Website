@@ -20,6 +20,7 @@ This directory contains the support website for Interest Calculator Pro, ready t
 6. Click Save
 
 Your support page will be available at:
+
 ```
 https://yourusername.github.io/flutter-apps/apps/interest_calculator/docs/
 ```
@@ -34,6 +35,7 @@ https://yourusername.github.io/flutter-apps/apps/interest_calculator/docs/
 6. Click Save
 
 Your support page will be available at:
+
 ```
 https://yourusername.github.io/interest-calculator-support/
 ```
@@ -43,11 +45,13 @@ https://yourusername.github.io/interest-calculator-support/
 Once deployed, use the GitHub Pages URL as your Support URL:
 
 **For App Store Connect:**
+
 ```
 https://yourusername.github.io/interest-calculator-support/
 ```
 
 **For Privacy Policy:**
+
 ```
 https://yourusername.github.io/interest-calculator-support/privacy.html
 ```
@@ -64,11 +68,13 @@ Before deploying, update the following:
 ## Local Testing
 
 To test locally, simply open `index.html` in a web browser:
+
 ```bash
 open apps/interest_calculator/docs/index.html
 ```
 
 Or use a simple HTTP server:
+
 ```bash
 cd apps/interest_calculator/docs
 python3 -m http.server 8000
