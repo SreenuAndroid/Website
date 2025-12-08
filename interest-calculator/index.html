@@ -148,8 +148,13 @@
         flex-wrap: wrap;
       }
 
-      .badge {
+      .badge-ios {
         height: 50px;
+      }
+
+      .badge-android {
+        height: 75px;
+        margin: -12px 0;
       }
 
       @media (max-width: 600px) {
@@ -187,7 +192,7 @@
             <img
               src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83"
               alt="Download on the App Store"
-              class="badge"
+              class="badge-ios"
             />
           </a>
           <a
@@ -197,7 +202,7 @@
             <img
               src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
               alt="Get it on Google Play"
-              class="badge"
+              class="badge-android"
             />
           </a>
         </div>
