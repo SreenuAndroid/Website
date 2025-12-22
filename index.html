@@ -3,8 +3,177 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Modern Mobile Tools</title>
+    <title>Modern Mobile Tools - 46 Apps for Android, iOS & Mac</title>
     <style>
+      :root {
+        --bg-primary: #f8fafc;
+        --bg-secondary: #ffffff;
+        --bg-hero: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+        --bg-card: #ffffff;
+        --bg-card-hover: #f8fafc;
+        --bg-footer: linear-gradient(180deg, #eef2ff 0%, #e0e7ff 100%);
+        --text-primary: #1e293b;
+        --text-secondary: #475569;
+        --text-muted: #64748b;
+        --text-hero: #ffffff;
+        --hero-tagline: rgba(255, 255, 255, 0.95);
+        --border-color: rgba(99, 102, 241, 0.12);
+        --border-hover: rgba(99, 102, 241, 0.35);
+        --card-shadow: 0 4px 15px rgba(79, 70, 229, 0.1);
+        --card-shadow-hover: 0 20px 40px rgba(79, 70, 229, 0.18);
+        --stat-bg: rgba(255, 255, 255, 0.15);
+        --stat-border: rgba(255, 255, 255, 0.3);
+        --stat-label: rgba(255, 255, 255, 0.85);
+        --stat-number-gradient: linear-gradient(
+          135deg,
+          #ffffff 0%,
+          #e0e7ff 100%
+        );
+        --about-bg: #ffffff;
+        --section-title-color: #ffffff;
+        --btn-secondary-bg: rgba(255, 255, 255, 0.2);
+        --btn-secondary-text: #ffffff;
+        --btn-secondary-border: rgba(255, 255, 255, 0.4);
+        --btn-secondary-hover: rgba(255, 255, 255, 0.3);
+        --badge-text: #ffffff;
+      }
+
+      /* Theme toggle button */
+      .theme-toggle {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        transition: all 0.3s ease;
+        z-index: 100;
+        backdrop-filter: blur(10px);
+      }
+
+      .theme-toggle:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: scale(1.1);
+      }
+
+      .theme-toggle .sun-icon {
+        display: none;
+      }
+
+      .theme-toggle .moon-icon {
+        display: block;
+      }
+
+      [data-theme="dark"] .theme-toggle .sun-icon {
+        display: block;
+      }
+
+      [data-theme="dark"] .theme-toggle .moon-icon {
+        display: none;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+          --bg-primary: #0f172a;
+          --bg-secondary: #1e293b;
+          --bg-hero: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);
+          --bg-card: linear-gradient(
+            145deg,
+            rgba(30, 41, 59, 0.8) 0%,
+            rgba(15, 23, 42, 0.9) 100%
+          );
+          --bg-card-hover: rgba(30, 41, 59, 1);
+          --bg-footer: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+          --text-primary: #f8fafc;
+          --text-secondary: #e2e8f0;
+          --text-muted: #94a3b8;
+          --text-hero: #ffffff;
+          --hero-tagline: #94a3b8;
+          --border-color: rgba(99, 102, 241, 0.15);
+          --border-hover: rgba(99, 102, 241, 0.4);
+          --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+          --card-shadow-hover:
+            0 20px 40px rgba(0, 0, 0, 0.3), 0 0 60px rgba(99, 102, 241, 0.15);
+          --stat-bg: linear-gradient(
+            135deg,
+            rgba(99, 102, 241, 0.2) 0%,
+            rgba(168, 85, 247, 0.2) 100%
+          );
+          --stat-border: rgba(99, 102, 241, 0.3);
+          --stat-label: rgba(255, 255, 255, 0.8);
+          --stat-number-gradient: linear-gradient(
+            135deg,
+            #6366f1 0%,
+            #a855f7 100%
+          );
+          --about-bg: linear-gradient(
+            145deg,
+            rgba(30, 41, 59, 0.6) 0%,
+            rgba(15, 23, 42, 0.8) 100%
+          );
+          --section-title-color: #f8fafc;
+          --btn-secondary-bg: rgba(255, 255, 255, 0.1);
+          --btn-secondary-text: #e2e8f0;
+          --btn-secondary-border: rgba(255, 255, 255, 0.2);
+          --btn-secondary-hover: rgba(255, 255, 255, 0.15);
+          --badge-text: #ffffff;
+        }
+      }
+
+      /* Explicit dark theme */
+      [data-theme="dark"] {
+        --bg-primary: #0f172a;
+        --bg-secondary: #1e293b;
+        --bg-hero: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);
+        --bg-card: linear-gradient(
+          145deg,
+          rgba(30, 41, 59, 0.8) 0%,
+          rgba(15, 23, 42, 0.9) 100%
+        );
+        --bg-card-hover: rgba(30, 41, 59, 1);
+        --bg-footer: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+        --text-primary: #f8fafc;
+        --text-secondary: #e2e8f0;
+        --text-muted: #94a3b8;
+        --text-hero: #ffffff;
+        --hero-tagline: #94a3b8;
+        --border-color: rgba(99, 102, 241, 0.15);
+        --border-hover: rgba(99, 102, 241, 0.4);
+        --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        --card-shadow-hover:
+          0 20px 40px rgba(0, 0, 0, 0.3), 0 0 60px rgba(99, 102, 241, 0.15);
+        --stat-bg: linear-gradient(
+          135deg,
+          rgba(99, 102, 241, 0.2) 0%,
+          rgba(168, 85, 247, 0.2) 100%
+        );
+        --stat-border: rgba(99, 102, 241, 0.3);
+        --stat-label: rgba(255, 255, 255, 0.8);
+        --stat-number-gradient: linear-gradient(
+          135deg,
+          #6366f1 0%,
+          #a855f7 100%
+        );
+        --about-bg: linear-gradient(
+          145deg,
+          rgba(30, 41, 59, 0.6) 0%,
+          rgba(15, 23, 42, 0.8) 100%
+        );
+        --section-title-color: #f8fafc;
+        --btn-secondary-bg: rgba(255, 255, 255, 0.1);
+        --btn-secondary-text: #e2e8f0;
+        --btn-secondary-border: rgba(255, 255, 255, 0.2);
+        --btn-secondary-hover: rgba(255, 255, 255, 0.15);
+        --badge-text: #ffffff;
+      }
+
       * {
         box-sizing: border-box;
         margin: 0;
@@ -16,145 +185,205 @@
           -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
           "Helvetica Neue", Arial, sans-serif;
         margin: 0;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: #1a202c;
+        background: var(--bg-primary);
+        color: var(--text-primary);
         min-height: 100vh;
       }
 
-      header {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        padding: 4rem 2rem;
+      /* Hero Section */
+      .hero {
+        background: var(--bg-hero);
+        padding: 80px 20px 120px;
         text-align: center;
         position: relative;
-        overflow: visible;
+        overflow: hidden;
       }
 
-      .contact-header {
-        position: absolute;
-        top: 1.5rem;
-        right: 2rem;
-        background: rgba(255, 255, 255, 1);
-        backdrop-filter: blur(10px);
-        padding: 1rem 1.5rem;
-        border-radius: 12px;
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-        border: 2px solid rgba(102, 126, 234, 0.3);
-        text-align: left;
-        z-index: 10;
-      }
-
-      .contact-header h3 {
-        font-size: 0.9rem;
-        margin: 0 0 0.5rem 0;
-        color: #1a202c;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-      }
-
-      .contact-header p {
-        margin: 0;
-        font-size: 0.85rem;
-        line-height: 2.5;
-        color: #2d3748;
-      }
-
-      .contact-header a {
-        color: #5639cc;
-        text-decoration: none;
-        font-weight: 700;
-        transition: color 0.2s ease;
-      }
-
-      .contact-header a:hover {
-        color: #764ba2;
-      }
-
-      header::before {
+      .hero::before {
         content: "";
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>');
-        opacity: 0.4;
+        background:
+          radial-gradient(
+            circle at 20% 50%,
+            rgba(255, 255, 255, 0.1) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 50%,
+            rgba(255, 255, 255, 0.1) 0%,
+            transparent 50%
+          );
       }
 
-      header h1 {
-        font-size: 3rem;
-        margin: 0 0 0.5rem 0;
-        font-weight: 700;
+      .hero-content {
         position: relative;
         z-index: 1;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        margin-bottom: 16px;
+        color: var(--text-hero);
+        letter-spacing: -1px;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-        letter-spacing: -0.5px;
       }
 
-      header p {
-        font-size: 1.25rem;
-        opacity: 0.95;
-        position: relative;
-        z-index: 1;
-        font-weight: 300;
+      .hero .tagline {
+        font-size: 1.35rem;
+        color: var(--hero-tagline);
+        margin-bottom: 48px;
+        font-weight: 400;
       }
 
+      /* Stats Section */
+      .stats-container {
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+        flex-wrap: wrap;
+        margin-bottom: 48px;
+      }
+
+      .stat-card {
+        background: var(--stat-bg);
+        border: 1px solid var(--stat-border);
+        border-radius: 20px;
+        padding: 32px 48px;
+        text-align: center;
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+      }
+
+      .stat-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(99, 102, 241, 0.6);
+        box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+      }
+
+      .stat-number {
+        font-size: 4rem;
+        font-weight: 800;
+        background: var(--stat-number-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        line-height: 1;
+        margin-bottom: 8px;
+      }
+
+      .stat-label {
+        font-size: 1rem;
+        color: var(--stat-label);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 600;
+      }
+
+      /* CTA Buttons */
+      .cta-buttons {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .cta-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 16px 32px;
+        border-radius: 14px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+      }
+
+      .cta-btn.primary {
+        background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+        color: white;
+        box-shadow: 0 8px 24px rgba(99, 102, 241, 0.4);
+      }
+
+      .cta-btn.primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 32px rgba(99, 102, 241, 0.5);
+      }
+
+      .cta-btn.secondary {
+        background: var(--btn-secondary-bg);
+        color: var(--btn-secondary-text);
+        border: 1px solid var(--btn-secondary-border);
+      }
+
+      .cta-btn.secondary:hover {
+        background: var(--btn-secondary-hover);
+        border-color: var(--btn-secondary-border);
+      }
+
+      /* Main Content */
       main {
         max-width: 1400px;
-        margin: -2rem auto 2rem;
-        padding: 2rem 1.5rem;
-        background: #f7fafc;
-        border-radius: 24px 24px 0 0;
-        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+        margin: -60px auto 0;
+        padding: 0 20px 80px;
         position: relative;
       }
 
-      section {
-        margin-bottom: 4rem;
+      /* Section Header */
+      .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 32px;
+        flex-wrap: wrap;
+        gap: 16px;
       }
 
-      h2.section-title {
+      .section-title {
         font-size: 2rem;
-        margin-bottom: 2rem;
-        color: #2d3748;
         font-weight: 700;
-        position: relative;
-        padding-bottom: 0.75rem;
-        display: inline-block;
+        color: var(--section-title-color);
+        display: flex;
+        align-items: center;
+        gap: 12px;
       }
 
-      h2.section-title::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 60%;
-        height: 4px;
-        background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-        border-radius: 2px;
+      .section-title .count-badge {
+        background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+        color: var(--badge-text);
+        font-size: 0.9rem;
+        padding: 6px 14px;
+        border-radius: 30px;
+        font-weight: 600;
       }
 
+      /* App Grid */
       .grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 1.25rem;
-        margin-top: 2rem;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 20px;
       }
 
       .app {
-        background: white;
-        border-radius: 16px;
-        padding: 1.25rem 1rem;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 20px;
+        padding: 24px 20px;
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
         position: relative;
         overflow: hidden;
-        border: 1px solid rgba(0, 0, 0, 0.05);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: var(--card-shadow);
       }
 
       .app::before {
@@ -164,14 +393,20 @@
         left: 0;
         right: 0;
         height: 3px;
-        background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(
+          90deg,
+          #6366f1 0%,
+          #a855f7 50%,
+          #6366f1 100%
+        );
         transform: scaleX(0);
-        transition: transform 0.3s ease;
+        transition: transform 0.4s ease;
       }
 
       .app:hover {
-        transform: translateY(-6px) scale(1.01);
-        box-shadow: 0 16px 32px rgba(102, 126, 234, 0.2);
+        transform: translateY(-8px);
+        border-color: var(--border-hover);
+        box-shadow: var(--card-shadow-hover);
       }
 
       .app:hover::before {
@@ -179,96 +414,110 @@
       }
 
       .app img {
-        width: 64px;
-        height: 64px;
-        border-radius: 16px;
-        margin-bottom: 0.75rem;
-        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
+        width: 72px;
+        height: 72px;
+        border-radius: 18px;
+        margin-bottom: 16px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        transition: transform 0.4s ease;
       }
 
       .app:hover img {
-        transform: scale(1.08) rotate(3deg);
+        transform: scale(1.1) rotate(3deg);
       }
 
       .app h2 {
         font-size: 1rem;
-        margin: 0.5rem 0;
-        color: #2d3748;
+        margin: 0 0 8px;
+        color: var(--text-primary);
         font-weight: 600;
-        line-height: 1.3;
+        line-height: 1.4;
       }
 
       .app p {
         font-size: 0.85rem;
-        color: #718096;
-        margin: 0.35rem 0 1rem;
+        color: var(--text-muted);
+        margin: 0 0 16px;
         line-height: 1.5;
         flex-grow: 1;
       }
 
       .app a {
-        padding: 0.55rem 1.5rem;
+        padding: 10px 24px;
         text-decoration: none;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
         color: white;
         border-radius: 10px;
         font-size: 0.875rem;
         font-weight: 600;
         transition: all 0.3s ease;
-        box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
-        display: inline-block;
+        box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
       }
 
       .app a:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
       }
 
-      .app.disabled a {
-        pointer-events: none;
-        background: #cbd5e0;
-        box-shadow: none;
+      /* About Section */
+      .about-section {
+        margin-top: 80px;
+        background: var(--about-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 24px;
+        padding: 48px;
+        text-align: center;
+        box-shadow: var(--card-shadow);
       }
 
-      .contact,
-      .about {
+      .about-section h2 {
+        font-size: 1.75rem;
+        color: var(--text-primary);
+        margin-bottom: 16px;
+        font-weight: 700;
+      }
+
+      .about-section p {
+        color: var(--text-muted);
+        font-size: 1.1rem;
         line-height: 1.8;
-        background: white;
-        padding: 2rem;
-        border-radius: 16px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        max-width: 700px;
+        margin: 0 auto;
       }
 
-      .about p,
-      .contact p {
-        color: #4a5568;
-        font-size: 1.05rem;
-      }
-
-      .contact a {
-        color: #667eea;
-        text-decoration: none;
-        font-weight: 600;
-        transition: color 0.2s ease;
-        border-bottom: 2px solid transparent;
-      }
-
-      .contact a:hover {
-        color: #764ba2;
-        border-bottom-color: #764ba2;
-      }
-
+      /* Footer */
       footer {
         text-align: center;
-        padding: 3rem 1rem;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        font-size: 0.95rem;
-        color: white;
-        margin-top: 4rem;
+        padding: 48px 20px;
+        background: var(--bg-footer);
+        border-top: 1px solid var(--border-color);
       }
 
+      .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 32px;
+        margin-bottom: 24px;
+        flex-wrap: wrap;
+      }
+
+      .footer-links a {
+        color: var(--text-muted);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s ease;
+      }
+
+      .footer-links a:hover {
+        color: #6366f1;
+      }
+
+      .footer-copyright {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+      }
+
+      /* Animations */
       @keyframes fadeInUp {
         from {
           opacity: 0;
@@ -281,819 +530,961 @@
       }
 
       .app {
-        animation: fadeInUp 0.6s ease-out backwards;
+        animation: fadeInUp 0.5s ease backwards;
       }
 
       .app:nth-child(1) {
-        animation-delay: 0.05s;
+        animation-delay: 0.02s;
       }
       .app:nth-child(2) {
-        animation-delay: 0.1s;
+        animation-delay: 0.04s;
       }
       .app:nth-child(3) {
-        animation-delay: 0.15s;
+        animation-delay: 0.06s;
       }
       .app:nth-child(4) {
-        animation-delay: 0.2s;
+        animation-delay: 0.08s;
       }
       .app:nth-child(5) {
-        animation-delay: 0.25s;
+        animation-delay: 0.1s;
       }
       .app:nth-child(6) {
-        animation-delay: 0.3s;
+        animation-delay: 0.12s;
+      }
+      .app:nth-child(7) {
+        animation-delay: 0.14s;
+      }
+      .app:nth-child(8) {
+        animation-delay: 0.16s;
       }
 
+      /* Responsive */
       @media (max-width: 768px) {
-        header h1 {
-          font-size: 2.25rem;
+        .hero {
+          padding: 60px 20px 100px;
         }
 
-        header p {
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+
+        .hero .tagline {
           font-size: 1.1rem;
         }
 
-        .contact-header {
-          position: static;
-          margin: 0 auto 2rem;
-          max-width: 300px;
+        .stat-card {
+          padding: 24px 36px;
+        }
+
+        .stat-number {
+          font-size: 3rem;
         }
 
         .grid {
-          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-          gap: 1.5rem;
+          grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+          gap: 16px;
         }
 
-        main {
-          margin: -1rem auto 0;
-          padding: 1.5rem 1rem;
-          border-radius: 20px 20px 0 0;
-        }
-
-        h2.section-title {
-          font-size: 1.75rem;
+        .about-section {
+          padding: 32px 24px;
         }
       }
 
       @media (max-width: 480px) {
-        header {
-          padding: 3rem 1.5rem;
+        .hero h1 {
+          font-size: 2rem;
         }
 
-        header h1 {
-          font-size: 1.85rem;
+        .stat-card {
+          padding: 20px 28px;
+          width: 100%;
+          max-width: 200px;
         }
 
-        .contact-header {
-          padding: 0.75rem 1rem;
-          font-size: 0.8rem;
+        .stat-number {
+          font-size: 2.5rem;
         }
 
-        .contact-header h3 {
-          font-size: 0.8rem;
-        }
-
-        .contact-header p {
-          font-size: 0.75rem;
+        .cta-btn {
+          width: 100%;
+          justify-content: center;
         }
 
         .grid {
-          grid-template-columns: 1fr;
+          grid-template-columns: 1fr 1fr;
+          gap: 12px;
         }
 
         .app {
-          padding: 1.5rem 1rem;
+          padding: 16px 12px;
+        }
+
+        .app img {
+          width: 56px;
+          height: 56px;
+        }
+
+        .app h2 {
+          font-size: 0.85rem;
+        }
+
+        .app p {
+          font-size: 0.75rem;
+          display: none;
         }
       }
     </style>
   </head>
   <body>
-    <header>
-      <div class="contact-header">
-        <h3>Contact Us</h3>
-        <p>
-          📧
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="mailto:fairappsmobile@gmail.com"
-            >fairappsmobile@gmail.com</a
-          ><br />
-          📦
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://play.google.com/store/apps/dev?id=6860744363576313870"
-            >Download from Play Store</a
-          >
+    <section class="hero">
+      <button
+        class="theme-toggle"
+        onclick="toggleTheme()"
+        aria-label="Toggle theme"
+      >
+        <svg
+          class="sun-icon"
+          width="22"
+          height="22"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <circle cx="11" cy="11" r="5" />
+          <line x1="11" y1="1" x2="11" y2="3" />
+          <line x1="11" y1="19" x2="11" y2="21" />
+          <line x1="1" y1="11" x2="3" y2="11" />
+          <line x1="19" y1="11" x2="21" y2="11" />
+          <line x1="4" y1="4" x2="5.5" y2="5.5" />
+          <line x1="16.5" y1="16.5" x2="18" y2="18" />
+          <line x1="4" y1="18" x2="5.5" y2="16.5" />
+          <line x1="16.5" y1="5.5" x2="18" y2="4" />
+        </svg>
+        <svg
+          class="moon-icon"
+          width="22"
+          height="22"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+        </svg>
+      </button>
+      <div class="hero-content">
+        <h1>Modern Mobile Tools</h1>
+        <p class="tagline">
+          Simple, Useful & Privacy-Friendly Apps for Android, iOS & Mac
         </p>
-      </div>
-      <h1>Modern Mobile Tools</h1>
-      <p>Simple, Useful & Privacy-Friendly Android Apps</p>
-    </header>
-    <main>
-      <section>
-        <h2 class="section-title">Our Apps</h2>
-        <div class="grid">
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/C8UrmjpQ4OulJbdiKzcBzQn5PgUt7cb-TIxoe8L9G7YCblzBd1ai1bLoD2ct9WYviJ3vgWaSyG_sxqlYOVjLmiI=w480-h960-rw"
-              alt="AAC to MP3 Converter Icon"
-            />
-            <h2>AAC to MP3 Converter</h2>
-            <p>Convert AAC audio files to MP3 format.</p>
-            <a
-              href="https://play.google.com/store/apps/details?id=aac.to.mp3"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Download</a
-            >
-          </div>
 
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/G5QJXOewEvxkqupQUvdwybMeACdyFen1jTFshikoqugEieEI0q3f2v9Z1j8qyj3W8bz3zJTWoP9afAkG4PcI=w480-h960-rw"
-              alt="Add Audio to Video Icon"
-            />
-            <h2>Add Audio to Video</h2>
-            <p>Add and replace audio and music to videos.</p>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://play.google.com/store/apps/details?id=add.audio.to.video.app"
-              >Download</a
-            >
+        <div class="stats-container">
+          <div class="stat-card">
+            <div class="stat-number">46</div>
+            <div class="stat-label">Android Apps</div>
           </div>
-
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/0meFGRnxo2_uWshX6sBtoSUwlQfLU2iZVeScVo3Ry2cVJjKWAU0tg6u390tevTJgSeGtYF7wmps_4BnLinxVlA=w480-h960-rw"
-              alt="AMR to MP3 Converter Icon"
-            />
-            <h2>AMR to MP3 Converter</h2>
-            <p>Convert AMR audio files to MP3 format.</p>
-            <a
-              href="https://play.google.com/store/apps/details?id=amr.to.mp3"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Download</a
-            >
+          <div class="stat-card">
+            <div class="stat-number">2</div>
+            <div class="stat-label">iOS/Mac Apps</div>
           </div>
-
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/slMcjW_J6BwBEUUTbqaCPQvpshNHgo4Vz5UA6R-5j5OhYIlXiPbaJUdZlZ725-aC8Q=w480-h960-rw"
-              alt="App Uninstaller Pro Icon"
-            />
-            <h2>App Uninstaller Pro</h2>
-            <p>Manage and remove apps with ease.</p>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://play.google.com/store/apps/details?id=app.uninstaller"
-              >Download</a
-            >
-          </div>
-
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/B-WbnqjAAbHAc1Uw6oJxwj0rnAeE-S7PGEo6-8p30nNR9rN4LFwsQsMf12cAErm_hXyblh_VpZMoRW_Y3L1tHw=w480-h960-rw"
-              alt="Audio Converter"
-            />
-            <h2>Audio Converter</h2>
-            <p>Convert audio to other audio formats.</p>
-            <a
-              href="https://play.google.com/store/apps/details?id=audio.converter.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Download</a
-            >
-          </div>
-
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/esDKR8D6FiYJOsILkIcOEtLHFEVf0feitFPxTLFMSlo5YKyrpF0XfntDiVne-xbgVbWAGg0IYvWZ0bAfHDAI_Q=w480-h960-rw"
-              alt="Audio Cutter and Merger Icon"
-            />
-            <h2>Audio Cutter and Merger</h2>
-            <p>Cut, merge, and edit audio files easily.</p>
-            <a
-              href="https://play.google.com/store/apps/details?id=audio.cutter.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Download</a
-            >
-          </div>
-
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/1DCm1rZyRQgyEaCo2Lqz2Er0ph3Da9sg3M3igzEvOFElLNfy5b79-8C9sP2zAlwL16B-REgRdBkyPhEx6I8pTQ=w480-h960-rw"
-              alt="Audio to Mp4 Converter Icon"
-            />
-            <h2>Audio to Mp4 Converter</h2>
-            <p>Create video from audio with image background.</p>
-            <a
-              href="https://play.google.com/store/apps/details?id=audio.to.mp4.converter"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Download</a
-            >
-          </div>
-
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/e3geLv2g3FJcfwTZ4GaHBI13fwYSpP2UZ_VOWNTx17grp11GMNb2XotGa8DTro4vbg=w480-h960-rw"
-              alt="Audio to Video Converter Icon"
-            />
-            <h2>Audio to Video Converter</h2>
-            <p>Create video from audio with image background.</p>
-            <a
-              href="https://play.google.com/store/apps/details?id=audio.to.video"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Download</a
-            >
-          </div>
-
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/yN8Bh5nsBEuZMWcnYrRu-WUzDnbVnCGIWrLnoYhhupeHlKgnjYegY5QghO3ZRUXTtvg=w480-h960-rw"
-              alt="Audio Video Converter Icon"
-            />
-            <h2>Audio Video Converter</h2>
-            <p>Convert audio to stunning video formats.</p>
-            <a
-              href="https://play.google.com/store/apps/details?id=audio.video.converter"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Download</a
-            >
-          </div>
-
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/s6H2XDrgmWPj1L0BLqPIpOEctxy22WWNJwljVqMRD-tSwcpUb7pYOT18XdiEW6Aazy8=w480-h960-rw"
-              alt="BMI Calculator Icon"
-            />
-            <h2>BMI Calculator</h2>
-            <p>Calculate your BMI with ease and precision.</p>
-            <a
-              href="https://play.google.com/store/apps/details?id=bmi.calculator.application"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Download</a
-            >
-          </div>
-
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/CERuthtGot3KQLGyzr0VHU3k6x35I8mzPGmHHR_0eiiii31Q1IQY0ohu2y0igi64jaGRaMd_IQ5C3baGVVWI=w480-h960-rw"
-              alt="Byaj Calculator Icon"
-            />
-            <h2>Byaj Calculator</h2>
-            <p>
-              Calculate simple, compound, vaddi, and village interest with ease.
-            </p>
-            <a
-              href="https://play.google.com/store/apps/details?id=byaj.calculator"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Download</a
-            >
-          </div>
-
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/6C-W1-mdDuCZlZf2V3DXG4Qql6tdrM_CfDnUupBJFYWZ85PI18vplzoN6vQbYFjq1FY=w480-h960-rw"
-              alt="Compound Interest Calculator Icon"
-            />
-            <h2>Compound Interest Calculator</h2>
-            <p>Calculate compound interest with flexible inputs.</p>
-            <a
-              href="https://play.google.com/store/apps/details?id=compound.interest.calculator.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Download</a
-            >
-          </div>
-
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/SwgbcG1cm8sr41YeYLk6rH7mmeFt9PLx5cNoU_fYz964ish94BSQ_IR4JwjG8bhHXw=w480-h960-rw"
-              alt="Diary - Journal, My Diary Icon"
-            />
-            <h2>Diary - Journal, My Diary</h2>
-            <p>Secure journal to write personal thoughts.</p>
-            <a
-              href="https://play.google.com/store/apps/details?id=mydiary.diary.diarywithlock.diaryjournal.secretdiary.notes.notebook.write.memoir.journal"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Download</a
-            >
-          </div>
-
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/uSkcJNBSMgPqwgEbBOdNeXfq3LqnduQ6lepKzhtm4QchPUB1PSBvfz5N1wIXUZ9CyyDZMsL3hNKQ1Ti3E4fPqA=w480-h960-rw"
-              alt="Easy Audio to Video Converter Icon"
-            />
-            <h2>Easy Audio to Video Converter</h2>
-            <p>Convert audio files to video format easily.</p>
-            <a
-              href="https://play.google.com/store/apps/details?id=simple.audio.to.video"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Download</a
-            >
-          </div>
-
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/GaazpL2dxXhQuna1ygZ5ZOs_fyUSGWbz-a88iKb8O-0UItw33aqV1ikaGzgiUmz5bg=w480-h960-rw"
-              alt="EMI Calculator Icon"
-            />
-            <h2>EMI Calculator</h2>
-            <p>Calculate monthly installments quickly.</p>
-            <a
-              href="https://play.google.com/store/apps/details?id=emi.calculator.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Download</a
-            >
-          </div>
-
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/-hSO-Qexl10W4nlzbtF9hJFUsD7Ner4MYKWM9i8dwcv43i0dC99tqJFvRsEa5180kdQ=w480-h960-rw"
-              alt="Flashlight Pro Icon"
-            />
-            <h2>Flashlight Pro: LED Torch SOS</h2>
-            <p>Powerful flashlight app with SOS functionality.</p>
-            <a
-              href="https://play.google.com/store/apps/details?id=flash.light.app.latest"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Download</a
-            >
-          </div>
-
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/SIIqMl3Wrs8af9elNo9I2GcPxUESdtJSuptsDmWRVTlrbs0_f0GODL4Mb9VqpnWY97M0FLuqj3vAYE_kRMpnPA=w480-h960-rw"
-              alt="FLAC to MP3 Converter Icon"
-            />
-            <h2>FLAC to MP3 Converter</h2>
-            <p>Convert FLAC audio files to MP3 format.</p>
-            <a
-              href="https://play.google.com/store/apps/details?id=flac.to.mp3"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Download</a
-            >
-          </div>
-
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/sII1cpy8TaEHsB26QZsA4VVcNOZOv_pDCHWfiGwPD1XWYTM6GU5SMYZHPAdJmLbaG94=w480-h960-rw"
-              alt="Gold Ledger Icon"
-            />
-            <h2>Gold Ledger - Orders & Pawn</h2>
-            <p>Track gold orders and pawn records.</p>
-            <a
-              href="https://play.google.com/store/apps/details?id=inventory.manager"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Download</a
-            >
-          </div>
-
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/6fsqLjL2QaWkgU13UYIXiC-tgZg_DiNVeks1p7Ci2YeZWsnMAilDAvDOTJAioIUyH4EdGKyGvr2ej2bC8ICcWeY=w480-h960-rw"
-              alt="Housie Tambola Number Caller Icon"
-            />
-            <h2>Housie Tambola Number Caller</h2>
-            <p>Number caller for Tambola games with voice.</p>
-            <a href="housie/" target="_blank" rel="noopener noreferrer"
-              >Download</a
-            >
-          </div>
-
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/4cWph5TDb_yk-4f-nUNDY9e3YvP0rVmYwRMnbRQ2PfMeIFuRqSEnx1FcZMXqhNHBx0TV=w480-h960-rw"
-              alt="Interest Calculator Icon"
-            />
-            <h2>Interest Calculator</h2>
-            <p>Calculate interest on loans and deposits.</p>
-            <a
-              href="interest-calculator/"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Download</a
-            >
-          </div>
-
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/_3_U1y5vXhFqpKBgRh72RF5Vj0VNf8nTnF9yR1O75TRadDeseymeZHW5i8nWvcSzBx6nq7HErPf15p4qsflb8A=w480-h960-rw"
-              alt="M4A to MP3 Converter Icon"
-            />
-            <h2>M4A to MP3 Converter</h2>
-            <p>Convert M4A audio files to MP3 format.</p>
-            <a
-              href="https://play.google.com/store/apps/details?id=m4a.to.mp3"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Download</a
-            >
-          </div>
-
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/qvSj4BNsmpJ5CUI_qzn-A8W2ChquozofXsOuT7e9WEdR5rJXWRNm0tCkvouNkmSI1RjJ=w480-h960-rw"
-              alt="Memorize - Journal, Diary Icon"
-            />
-            <h2>Memorize - Journal, Diary</h2>
-            <p>Simple app to record daily memories.</p>
-            <a
-              href="https://play.google.com/store/apps/details?id=com.fairapps.memorize"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Download</a
-            >
-          </div>
-
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/zHb83KOym1RIQRizAd9IVE9ZbBVVFIc3C6gLuWH9xWFUXTCewnMbcW4gRI8ZcYNaLERehrzQ8xXpnoKod0JrCyI=w480-h960-rw"
-              alt="MP3 Converter Audio to Audio Icon"
-            />
-            <h2>MP3 Converter Audio to Audio</h2>
-            <p>Convert between various audio formats easily.</p>
-            <a
-              href="https://play.google.com/store/apps/details?id=mp3.converter.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Download</a
-            >
-          </div>
-
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/_LGXsLc2Uft34O5SNmZ0BpRgxAZZMrN_N_e7cGm1YjqEh2HZxM0LLBYDv26dv2jJm_o9J40Piy_2BpmCxbyPVw=w480-h960-rw"
-              alt="MP3 Cutter & Merger Icon"
-            />
-            <h2>MP3 Cutter and Merger</h2>
-            <p>Cut, merge, and edit MP3 audio files easily.</p>
-            <a
-              href="https://play.google.com/store/apps/details?id=mp3.cutter.merger.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Download</a
-            >
-          </div>
-
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/jPkNQyTKs5yo1hdO9Y5ZQOWVXpyr8AC68dJJ7TVqw5CDHHUzrjo2wOziO1G0QqlGX3mHhLg6btuM6e4hq2g1MLQ=w480-h960-rw"
-              alt="MP3 Cutter and Ringtone Maker Icon"
-            />
-            <h2>MP3 Cutter and Ringtone Maker</h2>
-            <p>Cut and edit MP3 files to create ringtones.</p>
-            <a
-              href="https://play.google.com/store/apps/details?id=mp3.cutter.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Download</a
-            >
-          </div>
-
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/CCPi7crQM1xZEHb2Kv9jPRPRstx3jO0zz-T61C6AaFLrnESVlrImY8r11Gq7isv7pBMlt_HjDFuMW4YvoLCuwA=w480-h960-rw"
-              alt="Mp3 Cutter Video Cutter Icon"
-            />
-            <h2>Mp3 Cutter Video Cutter</h2>
-            <p>Cut and edit video and audio files.</p>
-            <a
-              href="https://play.google.com/store/apps/details?id=mp3.video.cutter.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Download</a
-            >
-          </div>
-
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/DIgH8qEg5pt0mGFPD82PO91xJHnGVS006GL6SCbeaxbTwOsouAx0bTa_kI7RtHQjkjk0KU0zsLjGWaVut5Cx=w480-h960-rw"
-              alt="MP3 to Text Converter Icon"
-            />
-            <h2>MP3 to Text Converter</h2>
-            <p>Convert audio files to text with speech recognition.</p>
-            <a
-              href="https://play.google.com/store/apps/details?id=mp3.to.text"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Download</a
-            >
-          </div>
-
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/COLjFCe6MxlL20L-7ZV701m_B0m2Ahq4llNhk2ZKg2ShgTUqphOS3xOc8L30YGTfVNZqSL_zjlhLtKy69WU3f7c=w480-h960-rw"
-              alt="MP3 to WAV Converter Icon"
-            />
-            <h2>MP3 to WAV Converter</h2>
-            <p>Convert audio files from one format to other.</p>
-            <a
-              href="https://play.google.com/store/apps/details?id=mp3.to.wav"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Download</a
-            >
-          </div>
-
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/qMxQvBlJT0ir_ileoDyDO--sLqBQ8smQb-8qlrkQnbLmBuIiOfSPdYrYi7mervQ5m9mJCyWg7BPbOI2xzzRrmbU=w480-h960-rw"
-              alt="Mp3 to Mp4 Converter App Icon"
-            />
-            <h2>Mp3 to Mp4 Converter App</h2>
-            <p>Convert MP3 files into video format.</p>
-            <a
-              href="https://play.google.com/store/apps/details?id=mp3.to.mp4.converter"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Download</a
-            >
-          </div>
-
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/o83-ZjO8xDmy-diMpKGDYTbw1NTQTcYq-3l5PpdKGxsyGjF3NOJLXHZR4T341hb7i3aJQoBLhrZQku0Q220ymA=w480-h960-rw"
-              alt="Mp3 to Video Converter Icon"
-            />
-            <h2>Mp3 to Video Converter</h2>
-            <p>Create video clips from audio tracks.</p>
-            <a
-              href="https://play.google.com/store/apps/details?id=mp3.to.video"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Download</a
-            >
-          </div>
-
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/ywhEExynOFjyBfR1iHi9dak_bA1q-QCLF3DTnpc6oYV8kanBwlfKnFHgdeYNho943CoHQvHVdj940oqzRtG2m28=w480-h960-rw"
-              alt="MP4 to MP3 Converter Icon"
-            />
-            <h2>MP4 to MP3 Converter</h2>
-            <p>Convert MP4 video files to MP3 audio format.</p>
-            <a
-              href="https://play.google.com/store/apps/details?id=mp4.to.mp3.converter"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Download</a
-            >
-          </div>
-
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/CdR5AkVnmw7yCVXequvQn8xa2PJYGXUD8e2XHxJ21NoCAVJzM1utmuUQ7BlmhAW0QdTgSDfcnn92lFuP3c0X4A=w480-h960-rw"
-              alt="Opus to Mp3 Converter Icon"
-            />
-            <h2>Opus to Mp3 Converter</h2>
-            <p>Convert Opus audio files to MP3 format.</p>
-            <a
-              href="https://play.google.com/store/apps/details?id=opus.to.mp3"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Download</a
-            >
-          </div>
-
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/C7AWj68JoxJMbgC-McOPxoNebTfMPOaAXNEd7sNkx8EnQjk7JXhfSzhaf2niPTjI9rM=w480-h960-rw"
-              alt="Periodic Table Pro Icon"
-            />
-            <h2>Periodic Table Pro: Elements</h2>
-            <p>Interactive periodic table with details.</p>
-            <a
-              href="https://play.google.com/store/apps/details?id=periodic.table.app.latest"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Download</a
-            >
-          </div>
-
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/3gUTUR2FAquWLj8YREPEMZwLCUd3OSRy0nEIGpa27LxDTcNzGUPNWIqX1xpUotwSX48=w480-h960-rw"
-              alt="Photo Resize & Compress Icon"
-            />
-            <h2>Photo Resize & Compress</h2>
-            <p>Resize and compress images instantly.</p>
-            <a
-              href="https://play.google.com/store/apps/details?id=image.resizer"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Download</a
-            >
-          </div>
-
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/QNqMSuBLEZ2PIr2crQeTtCoEXFi237lZD2VxF1at4alEmLdnNvRZjnzE_ddDcejAYBo=w480-h960-rw"
-              alt="Photo Shorts Maker with Music Icon"
-            />
-            <h2>Photo Shorts Maker with Music</h2>
-            <p>Turn photos into shorts with music.</p>
-            <a
-              href="https://play.google.com/store/apps/details?id=shorts.video.maker"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Download</a
-            >
-          </div>
-
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/0JwgVjXeACsXfnKFHyE0L4V8aDd9WxypAboUmYABwUUH0WtqTgzkXVvhgecSNkukCaI=w480-h960-rw"
-              alt="QR & Barcode Scanner Icon"
-            />
-            <h2>QR & Barcode Scanner</h2>
-            <p>Scan all types of QR and barcodes.</p>
-            <a
-              href="https://play.google.com/store/apps/details?id=com.fairapps.scanner"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Download</a
-            >
-          </div>
-
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/4rKlloNFwaO-m-tqlfUiU_z4cKzKyg2aPpyuu9y5QTOpHBKWMm756k4iMT_6CpYKDjsOwLZR5TBcD9onfyMI=w480-h960-rw"
-              alt="Simple File Explorer Icon"
-            />
-            <h2>Simple File Explorer</h2>
-            <p>Browse and manage files with ease.</p>
-            <a
-              href="https://play.google.com/store/apps/details?id=file.explorer.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Download</a
-            >
-          </div>
-
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/9dZFy3lWKhUOSPeoUyE1zYM1NQTqjuIhexNI1vSfhtWgPnRFjyYbw7S9pwTBH2Z3uIJKR9FCIFpyCgWy4Suj=w480-h960-rw"
-              alt="Tambola Game Number Calling Icon"
-            />
-            <h2>Tambola Game Number Calling</h2>
-            <p>Play Tambola paper free.</p>
-            <a
-              href="https://play.google.com/store/apps/details?id=tambola.number.caller"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Download</a
-            >
-          </div>
-
-          <div class="app">
-            <img
-              src="https://lh3.googleusercontent.com/y3XstCgiJjvhPKPCCmnJwfFvVFm7MBDzbwxt3-xM1B5pyhuZcwit4wG721ZuHMAwgKRqlA0nC_jRCIu7eAbcyA"
-              alt="Video Cutter and Merger Icon"
-            />
-            <h2>Video Cutter and Merger</h2>
-            <p>Cut and merge video files with ease.</p>
-            <a
-              href="https://play.google.com/store/apps/details?id=video.cutter.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Download</a
-            >
-          </div>
-
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/UINxxYzSisqUbdTMWp-KpwIJyTxdTXUZPea9ETeTG4iuNeiezzVhbdwDscg398Ec6q-ZgLpDYeEmwPZ_8Dw_3eo=w480-h960-rw"
-              alt="Video Merger - Merge Videos Icon"
-            />
-            <h2>Video Merger - Merge Videos</h2>
-            <p>Merge multiple video files into one.</p>
-            <a
-              href="https://play.google.com/store/apps/details?id=video.merger.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Download</a
-            >
-          </div>
-
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/CF4siqsSB7q8-sGsiTh9aBWyW1KFmQ40n0n035vNTZ0E5w4OXP1uTOV76bhzfO7E8Gqmk2q4ttsrb-SBy0BJ6w=w480-h960-rw"
-              alt="Video to Audio Converter Icon"
-            />
-            <h2>Video to Audio Converter</h2>
-            <p>Convert any video file to audio format.</p>
-            <a
-              href="https://play.google.com/store/apps/details?id=video.to.audio.converter"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Download</a
-            >
-          </div>
-
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/pW1anF9NU8Z2WYkUzK4Bxml7wwP73vB2KYcdRd6XqB_90LOATTVdkNpXlgCvwyFRbPFNJUM3FPGE4lrgof0CRA=w480-h960-rw"
-              alt="Video to MP3 Converter Icon"
-            />
-            <h2>Video to MP3 Converter</h2>
-            <p>Extract audio from videos as MP3 files.</p>
-            <a
-              href="https://play.google.com/store/apps/details?id=video.to.mp3.cutter"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Download</a
-            >
-          </div>
-
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/FRK7ots_PXY1m5aNbn4Al3C9kMblmZxpEdfd7tr8kdq7tkXnWyqSI_mFbeGpT8hxvL_jglEDS4FyCmyHCMUB=w480-h960-rw"
-              alt="Video to Video Converter Icon"
-            />
-            <h2>Video to Video Converter</h2>
-            <p>Convert videos to different formats.</p>
-            <a
-              href="https://play.google.com/store/apps/details?id=video.to.video.converter"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Download</a
-            >
-          </div>
-
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/-4FqxNqh3p62Nn_RecbPnOcDBXt1Jy1s_WEVWZnGsXkGwvS7r1xZ8uBrrqZK5bh55t5o=w480-h960-rw"
-              alt="Voice Recorder Icon"
-            />
-            <h2>Voice Recorder</h2>
-            <p>High-quality voice recording tool.</p>
-            <a
-              href="https://play.google.com/store/apps/details?id=voice.recorder.app.latest"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Download</a
-            >
-          </div>
-
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/mHFElQM8cHhP0pgwND-I1sw5W41Y_OGtLlOk_zBx-WBhyPZQdXCKviKHq5E6MnPltaad2Dkb9a2PKXuEFr5X=w480-h960-rw"
-              alt="WAV to MP3 Converter Icon"
-            />
-            <h2>WAV to MP3 Converter</h2>
-            <p>Convert WAV audio files to MP3 format.</p>
-            <a
-              href="https://play.google.com/store/apps/details?id=wav.to.mp3"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Download</a
-            >
-          </div>
-
-          <div class="app">
-            <img
-              src="https://play-lh.googleusercontent.com/zEC3IswIz07-OQezBP27uWsFrpLGjJ-HvTOt_TWWe3otTBV9uBu4Pm--mgZPPXlgP1TvBe3UoDOVDURxh0Y5bw=w480-h960-rw"
-              alt="Wma to Mp3 Converter Icon"
-            />
-            <h2>Wma to Mp3 Converter</h2>
-            <p>Convert WMA audio files to MP3 format.</p>
-            <a
-              href="https://play.google.com/store/apps/details?id=wma.to.mp3"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Download</a
-            >
+          <div class="stat-card">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Free & Private</div>
           </div>
         </div>
-      </section>
-      <section class="about">
-        <h2 class="section-title">About Us</h2>
+
+        <div class="cta-buttons">
+          <a
+            href="https://play.google.com/store/apps/dev?id=6860744363576313870"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cta-btn primary"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 010 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"
+              />
+            </svg>
+            View on Play Store
+          </a>
+          <a href="mailto:fairappsmobile@gmail.com" class="cta-btn secondary">
+            <svg
+              width="18"
+              height="18"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+              />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+            Contact Us
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <div class="section-header">
+        <h2 class="section-title">
+          Our Apps
+          <span class="count-badge">46 Apps</span>
+        </h2>
+      </div>
+
+      <div class="grid">
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/C8UrmjpQ4OulJbdiKzcBzQn5PgUt7cb-TIxoe8L9G7YCblzBd1ai1bLoD2ct9WYviJ3vgWaSyG_sxqlYOVjLmiI=w480-h960-rw"
+            alt="AAC to MP3 Converter Icon"
+          />
+          <h2>AAC to MP3 Converter</h2>
+          <p>Convert AAC audio files to MP3 format.</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=aac.to.mp3"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/G5QJXOewEvxkqupQUvdwybMeACdyFen1jTFshikoqugEieEI0q3f2v9Z1j8qyj3W8bz3zJTWoP9afAkG4PcI=w480-h960-rw"
+            alt="Add Audio to Video Icon"
+          />
+          <h2>Add Audio to Video</h2>
+          <p>Add and replace audio and music to videos.</p>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://play.google.com/store/apps/details?id=add.audio.to.video.app"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/0meFGRnxo2_uWshX6sBtoSUwlQfLU2iZVeScVo3Ry2cVJjKWAU0tg6u390tevTJgSeGtYF7wmps_4BnLinxVlA=w480-h960-rw"
+            alt="AMR to MP3 Converter Icon"
+          />
+          <h2>AMR to MP3 Converter</h2>
+          <p>Convert AMR audio files to MP3 format.</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=amr.to.mp3"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/slMcjW_J6BwBEUUTbqaCPQvpshNHgo4Vz5UA6R-5j5OhYIlXiPbaJUdZlZ725-aC8Q=w480-h960-rw"
+            alt="App Uninstaller Pro Icon"
+          />
+          <h2>App Uninstaller Pro</h2>
+          <p>Manage and remove apps with ease.</p>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://play.google.com/store/apps/details?id=app.uninstaller"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/B-WbnqjAAbHAc1Uw6oJxwj0rnAeE-S7PGEo6-8p30nNR9rN4LFwsQsMf12cAErm_hXyblh_VpZMoRW_Y3L1tHw=w480-h960-rw"
+            alt="Audio Converter"
+          />
+          <h2>Audio Converter</h2>
+          <p>Convert audio to other audio formats.</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=audio.converter.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/esDKR8D6FiYJOsILkIcOEtLHFEVf0feitFPxTLFMSlo5YKyrpF0XfntDiVne-xbgVbWAGg0IYvWZ0bAfHDAI_Q=w480-h960-rw"
+            alt="Audio Cutter and Merger Icon"
+          />
+          <h2>Audio Cutter and Merger</h2>
+          <p>Cut, merge, and edit audio files easily.</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=audio.cutter.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/1DCm1rZyRQgyEaCo2Lqz2Er0ph3Da9sg3M3igzEvOFElLNfy5b79-8C9sP2zAlwL16B-REgRdBkyPhEx6I8pTQ=w480-h960-rw"
+            alt="Audio to Mp4 Converter Icon"
+          />
+          <h2>Audio to Mp4 Converter</h2>
+          <p>Create video from audio with image background.</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=audio.to.mp4.converter"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/e3geLv2g3FJcfwTZ4GaHBI13fwYSpP2UZ_VOWNTx17grp11GMNb2XotGa8DTro4vbg=w480-h960-rw"
+            alt="Audio to Video Converter Icon"
+          />
+          <h2>Audio to Video Converter</h2>
+          <p>Create video from audio with image background.</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=audio.to.video"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/yN8Bh5nsBEuZMWcnYrRu-WUzDnbVnCGIWrLnoYhhupeHlKgnjYegY5QghO3ZRUXTtvg=w480-h960-rw"
+            alt="Audio Video Converter Icon"
+          />
+          <h2>Audio Video Converter</h2>
+          <p>Convert audio to stunning video formats.</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=audio.video.converter"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/s6H2XDrgmWPj1L0BLqPIpOEctxy22WWNJwljVqMRD-tSwcpUb7pYOT18XdiEW6Aazy8=w480-h960-rw"
+            alt="BMI Calculator Icon"
+          />
+          <h2>BMI Calculator</h2>
+          <p>Calculate your BMI with ease and precision.</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=bmi.calculator.application"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/CERuthtGot3KQLGyzr0VHU3k6x35I8mzPGmHHR_0eiiii31Q1IQY0ohu2y0igi64jaGRaMd_IQ5C3baGVVWI=w480-h960-rw"
+            alt="Byaj Calculator Icon"
+          />
+          <h2>Byaj Calculator</h2>
+          <p>
+            Calculate simple, compound, vaddi, and village interest with ease.
+          </p>
+          <a
+            href="https://play.google.com/store/apps/details?id=byaj.calculator"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/6C-W1-mdDuCZlZf2V3DXG4Qql6tdrM_CfDnUupBJFYWZ85PI18vplzoN6vQbYFjq1FY=w480-h960-rw"
+            alt="Compound Interest Calculator Icon"
+          />
+          <h2>Compound Interest Calculator</h2>
+          <p>Calculate compound interest with flexible inputs.</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=compound.interest.calculator.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/SwgbcG1cm8sr41YeYLk6rH7mmeFt9PLx5cNoU_fYz964ish94BSQ_IR4JwjG8bhHXw=w480-h960-rw"
+            alt="Diary - Journal, My Diary Icon"
+          />
+          <h2>Diary - Journal, My Diary</h2>
+          <p>Secure journal to write personal thoughts.</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=mydiary.diary.diarywithlock.diaryjournal.secretdiary.notes.notebook.write.memoir.journal"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/uSkcJNBSMgPqwgEbBOdNeXfq3LqnduQ6lepKzhtm4QchPUB1PSBvfz5N1wIXUZ9CyyDZMsL3hNKQ1Ti3E4fPqA=w480-h960-rw"
+            alt="Easy Audio to Video Converter Icon"
+          />
+          <h2>Easy Audio to Video Converter</h2>
+          <p>Convert audio files to video format easily.</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=simple.audio.to.video"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/GaazpL2dxXhQuna1ygZ5ZOs_fyUSGWbz-a88iKb8O-0UItw33aqV1ikaGzgiUmz5bg=w480-h960-rw"
+            alt="EMI Calculator Icon"
+          />
+          <h2>EMI Calculator</h2>
+          <p>Calculate monthly installments quickly.</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=emi.calculator.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/-hSO-Qexl10W4nlzbtF9hJFUsD7Ner4MYKWM9i8dwcv43i0dC99tqJFvRsEa5180kdQ=w480-h960-rw"
+            alt="Flashlight Pro Icon"
+          />
+          <h2>Flashlight Pro: LED Torch SOS</h2>
+          <p>Powerful flashlight app with SOS functionality.</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=flash.light.app.latest"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/SIIqMl3Wrs8af9elNo9I2GcPxUESdtJSuptsDmWRVTlrbs0_f0GODL4Mb9VqpnWY97M0FLuqj3vAYE_kRMpnPA=w480-h960-rw"
+            alt="FLAC to MP3 Converter Icon"
+          />
+          <h2>FLAC to MP3 Converter</h2>
+          <p>Convert FLAC audio files to MP3 format.</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=flac.to.mp3"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/sII1cpy8TaEHsB26QZsA4VVcNOZOv_pDCHWfiGwPD1XWYTM6GU5SMYZHPAdJmLbaG94=w480-h960-rw"
+            alt="Gold Ledger Icon"
+          />
+          <h2>Gold Ledger - Orders & Pawn</h2>
+          <p>Track gold orders and pawn records.</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=inventory.manager"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/6fsqLjL2QaWkgU13UYIXiC-tgZg_DiNVeks1p7Ci2YeZWsnMAilDAvDOTJAioIUyH4EdGKyGvr2ej2bC8ICcWeY=w480-h960-rw"
+            alt="Housie Tambola Number Caller Icon"
+          />
+          <h2>Housie Tambola Number Caller</h2>
+          <p>Number caller for Tambola games with voice.</p>
+          <a href="housie/" target="_blank" rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/4cWph5TDb_yk-4f-nUNDY9e3YvP0rVmYwRMnbRQ2PfMeIFuRqSEnx1FcZMXqhNHBx0TV=w480-h960-rw"
+            alt="Interest Calculator Icon"
+          />
+          <h2>Interest Calculator</h2>
+          <p>Calculate interest on loans and deposits.</p>
+          <a
+            href="interest-calculator/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/_3_U1y5vXhFqpKBgRh72RF5Vj0VNf8nTnF9yR1O75TRadDeseymeZHW5i8nWvcSzBx6nq7HErPf15p4qsflb8A=w480-h960-rw"
+            alt="M4A to MP3 Converter Icon"
+          />
+          <h2>M4A to MP3 Converter</h2>
+          <p>Convert M4A audio files to MP3 format.</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=m4a.to.mp3"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/qvSj4BNsmpJ5CUI_qzn-A8W2ChquozofXsOuT7e9WEdR5rJXWRNm0tCkvouNkmSI1RjJ=w480-h960-rw"
+            alt="Memorize - Journal, Diary Icon"
+          />
+          <h2>Memorize - Journal, Diary</h2>
+          <p>Simple app to record daily memories.</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=com.fairapps.memorize"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/zHb83KOym1RIQRizAd9IVE9ZbBVVFIc3C6gLuWH9xWFUXTCewnMbcW4gRI8ZcYNaLERehrzQ8xXpnoKod0JrCyI=w480-h960-rw"
+            alt="MP3 Converter Audio to Audio Icon"
+          />
+          <h2>MP3 Converter Audio to Audio</h2>
+          <p>Convert between various audio formats easily.</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=mp3.converter.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/_LGXsLc2Uft34O5SNmZ0BpRgxAZZMrN_N_e7cGm1YjqEh2HZxM0LLBYDv26dv2jJm_o9J40Piy_2BpmCxbyPVw=w480-h960-rw"
+            alt="MP3 Cutter & Merger Icon"
+          />
+          <h2>MP3 Cutter and Merger</h2>
+          <p>Cut, merge, and edit MP3 audio files easily.</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=mp3.cutter.merger.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/jPkNQyTKs5yo1hdO9Y5ZQOWVXpyr8AC68dJJ7TVqw5CDHHUzrjo2wOziO1G0QqlGX3mHhLg6btuM6e4hq2g1MLQ=w480-h960-rw"
+            alt="MP3 Cutter and Ringtone Maker Icon"
+          />
+          <h2>MP3 Cutter and Ringtone Maker</h2>
+          <p>Cut and edit MP3 files to create ringtones.</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=mp3.cutter.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/CCPi7crQM1xZEHb2Kv9jPRPRstx3jO0zz-T61C6AaFLrnESVlrImY8r11Gq7isv7pBMlt_HjDFuMW4YvoLCuwA=w480-h960-rw"
+            alt="Mp3 Cutter Video Cutter Icon"
+          />
+          <h2>Mp3 Cutter Video Cutter</h2>
+          <p>Cut and edit video and audio files.</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=mp3.video.cutter.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/DIgH8qEg5pt0mGFPD82PO91xJHnGVS006GL6SCbeaxbTwOsouAx0bTa_kI7RtHQjkjk0KU0zsLjGWaVut5Cx=w480-h960-rw"
+            alt="MP3 to Text Converter Icon"
+          />
+          <h2>MP3 to Text Converter</h2>
+          <p>Convert audio files to text with speech recognition.</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=mp3.to.text"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/COLjFCe6MxlL20L-7ZV701m_B0m2Ahq4llNhk2ZKg2ShgTUqphOS3xOc8L30YGTfVNZqSL_zjlhLtKy69WU3f7c=w480-h960-rw"
+            alt="MP3 to WAV Converter Icon"
+          />
+          <h2>MP3 to WAV Converter</h2>
+          <p>Convert audio files from one format to other.</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=mp3.to.wav"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/qMxQvBlJT0ir_ileoDyDO--sLqBQ8smQb-8qlrkQnbLmBuIiOfSPdYrYi7mervQ5m9mJCyWg7BPbOI2xzzRrmbU=w480-h960-rw"
+            alt="Mp3 to Mp4 Converter App Icon"
+          />
+          <h2>Mp3 to Mp4 Converter App</h2>
+          <p>Convert MP3 files into video format.</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=mp3.to.mp4.converter"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/o83-ZjO8xDmy-diMpKGDYTbw1NTQTcYq-3l5PpdKGxsyGjF3NOJLXHZR4T341hb7i3aJQoBLhrZQku0Q220ymA=w480-h960-rw"
+            alt="Mp3 to Video Converter Icon"
+          />
+          <h2>Mp3 to Video Converter</h2>
+          <p>Create video clips from audio tracks.</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=mp3.to.video"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/ywhEExynOFjyBfR1iHi9dak_bA1q-QCLF3DTnpc6oYV8kanBwlfKnFHgdeYNho943CoHQvHVdj940oqzRtG2m28=w480-h960-rw"
+            alt="MP4 to MP3 Converter Icon"
+          />
+          <h2>MP4 to MP3 Converter</h2>
+          <p>Convert MP4 video files to MP3 audio format.</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=mp4.to.mp3.converter"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/CdR5AkVnmw7yCVXequvQn8xa2PJYGXUD8e2XHxJ21NoCAVJzM1utmuUQ7BlmhAW0QdTgSDfcnn92lFuP3c0X4A=w480-h960-rw"
+            alt="Opus to Mp3 Converter Icon"
+          />
+          <h2>Opus to Mp3 Converter</h2>
+          <p>Convert Opus audio files to MP3 format.</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=opus.to.mp3"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/C7AWj68JoxJMbgC-McOPxoNebTfMPOaAXNEd7sNkx8EnQjk7JXhfSzhaf2niPTjI9rM=w480-h960-rw"
+            alt="Periodic Table Pro Icon"
+          />
+          <h2>Periodic Table Pro: Elements</h2>
+          <p>Interactive periodic table with details.</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=periodic.table.app.latest"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/3gUTUR2FAquWLj8YREPEMZwLCUd3OSRy0nEIGpa27LxDTcNzGUPNWIqX1xpUotwSX48=w480-h960-rw"
+            alt="Photo Resize & Compress Icon"
+          />
+          <h2>Photo Resize & Compress</h2>
+          <p>Resize and compress images instantly.</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=image.resizer"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/QNqMSuBLEZ2PIr2crQeTtCoEXFi237lZD2VxF1at4alEmLdnNvRZjnzE_ddDcejAYBo=w480-h960-rw"
+            alt="Photo Shorts Maker with Music Icon"
+          />
+          <h2>Photo Shorts Maker with Music</h2>
+          <p>Turn photos into shorts with music.</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=shorts.video.maker"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/0JwgVjXeACsXfnKFHyE0L4V8aDd9WxypAboUmYABwUUH0WtqTgzkXVvhgecSNkukCaI=w480-h960-rw"
+            alt="QR & Barcode Scanner Icon"
+          />
+          <h2>QR & Barcode Scanner</h2>
+          <p>Scan all types of QR and barcodes.</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=com.fairapps.scanner"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/4rKlloNFwaO-m-tqlfUiU_z4cKzKyg2aPpyuu9y5QTOpHBKWMm756k4iMT_6CpYKDjsOwLZR5TBcD9onfyMI=w480-h960-rw"
+            alt="Simple File Explorer Icon"
+          />
+          <h2>Simple File Explorer</h2>
+          <p>Browse and manage files with ease.</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=file.explorer.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/9dZFy3lWKhUOSPeoUyE1zYM1NQTqjuIhexNI1vSfhtWgPnRFjyYbw7S9pwTBH2Z3uIJKR9FCIFpyCgWy4Suj=w480-h960-rw"
+            alt="Tambola Game Number Calling Icon"
+          />
+          <h2>Tambola Game Number Calling</h2>
+          <p>Play Tambola paper free.</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=tambola.number.caller"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://lh3.googleusercontent.com/y3XstCgiJjvhPKPCCmnJwfFvVFm7MBDzbwxt3-xM1B5pyhuZcwit4wG721ZuHMAwgKRqlA0nC_jRCIu7eAbcyA"
+            alt="Video Cutter and Merger Icon"
+          />
+          <h2>Video Cutter and Merger</h2>
+          <p>Cut and merge video files with ease.</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=video.cutter.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/UINxxYzSisqUbdTMWp-KpwIJyTxdTXUZPea9ETeTG4iuNeiezzVhbdwDscg398Ec6q-ZgLpDYeEmwPZ_8Dw_3eo=w480-h960-rw"
+            alt="Video Merger - Merge Videos Icon"
+          />
+          <h2>Video Merger - Merge Videos</h2>
+          <p>Merge multiple video files into one.</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=video.merger.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/CF4siqsSB7q8-sGsiTh9aBWyW1KFmQ40n0n035vNTZ0E5w4OXP1uTOV76bhzfO7E8Gqmk2q4ttsrb-SBy0BJ6w=w480-h960-rw"
+            alt="Video to Audio Converter Icon"
+          />
+          <h2>Video to Audio Converter</h2>
+          <p>Convert any video file to audio format.</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=video.to.audio.converter"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/pW1anF9NU8Z2WYkUzK4Bxml7wwP73vB2KYcdRd6XqB_90LOATTVdkNpXlgCvwyFRbPFNJUM3FPGE4lrgof0CRA=w480-h960-rw"
+            alt="Video to MP3 Converter Icon"
+          />
+          <h2>Video to MP3 Converter</h2>
+          <p>Extract audio from videos as MP3 files.</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=video.to.mp3.cutter"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/FRK7ots_PXY1m5aNbn4Al3C9kMblmZxpEdfd7tr8kdq7tkXnWyqSI_mFbeGpT8hxvL_jglEDS4FyCmyHCMUB=w480-h960-rw"
+            alt="Video to Video Converter Icon"
+          />
+          <h2>Video to Video Converter</h2>
+          <p>Convert videos to different formats.</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=video.to.video.converter"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/-4FqxNqh3p62Nn_RecbPnOcDBXt1Jy1s_WEVWZnGsXkGwvS7r1xZ8uBrrqZK5bh55t5o=w480-h960-rw"
+            alt="Voice Recorder Icon"
+          />
+          <h2>Voice Recorder</h2>
+          <p>High-quality voice recording tool.</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=voice.recorder.app.latest"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/mHFElQM8cHhP0pgwND-I1sw5W41Y_OGtLlOk_zBx-WBhyPZQdXCKviKHq5E6MnPltaad2Dkb9a2PKXuEFr5X=w480-h960-rw"
+            alt="WAV to MP3 Converter Icon"
+          />
+          <h2>WAV to MP3 Converter</h2>
+          <p>Convert WAV audio files to MP3 format.</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=wav.to.mp3"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+
+        <div class="app">
+          <img
+            src="https://play-lh.googleusercontent.com/zEC3IswIz07-OQezBP27uWsFrpLGjJ-HvTOt_TWWe3otTBV9uBu4Pm--mgZPPXlgP1TvBe3UoDOVDURxh0Y5bw=w480-h960-rw"
+            alt="Wma to Mp3 Converter Icon"
+          />
+          <h2>Wma to Mp3 Converter</h2>
+          <p>Convert WMA audio files to MP3 format.</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=wma.to.mp3"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download</a
+          >
+        </div>
+      </div>
+
+      <section class="about-section">
+        <h2>About Modern Mobile Tools</h2>
         <p>
-          At Modern Mobile Tools, we build high-quality Android apps that are
-          clean, useful, and respect your privacy. From productivity tools to
-          media utilities, our apps are designed to make your mobile experience
-          simpler and better.
+          We build high-quality apps for Android, iOS, and Mac that are clean,
+          useful, and respect your privacy. From productivity tools to media
+          utilities, our apps are designed to make your experience simpler and
+          better.
         </p>
       </section>
     </main>
-    <footer>&copy; 2025 Modern Mobile Tools. All rights reserved.</footer>
+
+    <footer>
+      <div class="footer-links">
+        <a
+          href="https://play.google.com/store/apps/dev?id=6860744363576313870"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Play Store</a
+        >
+        <a href="mailto:fairappsmobile@gmail.com">Contact</a>
+      </div>
+      <p class="footer-copyright">
+        &copy; 2025 Modern Mobile Tools. All rights reserved.
+      </p>
+    </footer>
+
+    <script>
+      function toggleTheme() {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute("data-theme");
+
+        if (currentTheme === "dark") {
+          html.setAttribute("data-theme", "light");
+          localStorage.setItem("theme", "light");
+        } else if (currentTheme === "light") {
+          html.setAttribute("data-theme", "dark");
+          localStorage.setItem("theme", "dark");
+        } else {
+          // No explicit theme set, check system preference
+          const prefersDark = window.matchMedia(
+            "(prefers-color-scheme: dark)",
+          ).matches;
+          const newTheme = prefersDark ? "light" : "dark";
+          html.setAttribute("data-theme", newTheme);
+          localStorage.setItem("theme", newTheme);
+        }
+      }
+
+      // Load saved theme on page load
+      (function () {
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+          document.documentElement.setAttribute("data-theme", savedTheme);
+        }
+      })();
+    </script>
   </body>
 </html>
