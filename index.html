@@ -8,7 +8,7 @@
       :root {
         --bg-primary: #f8fafc;
         --bg-secondary: #ffffff;
-        --bg-hero: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+        --bg-hero: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);
         --bg-card: #ffffff;
         --bg-card-hover: #f8fafc;
         --bg-footer: linear-gradient(180deg, #eef2ff 0%, #e0e7ff 100%);
@@ -265,6 +265,11 @@
         transform: translateY(-4px);
         border-color: rgba(99, 102, 241, 0.6);
         box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+      }
+
+      .stat-link {
+        text-decoration: none;
+        cursor: pointer;
       }
 
       .stat-number {
@@ -686,10 +691,10 @@
             <div class="stat-number">46</div>
             <div class="stat-label">Android Apps</div>
           </div>
-          <div class="stat-card">
+          <a href="ios/" class="stat-card stat-link">
             <div class="stat-number">2</div>
             <div class="stat-label">iOS/Mac Apps</div>
-          </div>
+          </a>
           <div class="stat-card">
             <div class="stat-number">100%</div>
             <div class="stat-label">Free & Private</div>
