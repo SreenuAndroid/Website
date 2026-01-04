@@ -1,6 +1,9 @@
 # Google AdMob / Ad Manager
 google.com, pub-1823235109381979, DIRECT, f08c47fec0942fa0
 
+# Facebook Audience Network
+facebook.com, 2600577870316494, DIRECT, c3e20eee3f780d68
+
 # AppLovin MAX Mediation
 applovin.com, 32cd326f5c93254f0138bcdb7a637411, DIRECT
 
