@@ -1,0 +1,609 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Get support for Modern Mobile Tools apps. Contact us, browse FAQs, and find help for our iOS, Mac, and Android applications."
+    />
+    <title>Support - Modern Mobile Tools</title>
+    <style>
+      :root {
+        --bg-primary: #f5f5f7;
+        --bg-hero: linear-gradient(180deg, #1d1d1f 0%, #000000 100%);
+        --bg-card: #ffffff;
+        --bg-footer: #f5f5f7;
+        --text-primary: #1d1d1f;
+        --text-secondary: #86868b;
+        --text-hero: #f5f5f7;
+        --text-hero-secondary: #a1a1a6;
+        --card-border: rgba(0, 0, 0, 0.1);
+        --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        --footer-border: rgba(0, 0, 0, 0.1);
+        --accent-color: #007aff;
+        --accent-hover: #0056b3;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+          --bg-primary: #000000;
+          --bg-hero: linear-gradient(180deg, #000000 0%, #1d1d1f 100%);
+          --bg-card: #1d1d1f;
+          --bg-footer: #000000;
+          --text-primary: #f5f5f7;
+          --text-secondary: #a1a1a6;
+          --card-border: rgba(255, 255, 255, 0.1);
+          --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+          --footer-border: rgba(255, 255, 255, 0.1);
+        }
+      }
+
+      [data-theme="dark"] {
+        --bg-primary: #000000;
+        --bg-hero: linear-gradient(180deg, #000000 0%, #1d1d1f 100%);
+        --bg-card: #1d1d1f;
+        --bg-footer: #000000;
+        --text-primary: #f5f5f7;
+        --text-secondary: #a1a1a6;
+        --card-border: rgba(255, 255, 255, 0.1);
+        --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        --footer-border: rgba(255, 255, 255, 0.1);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        min-height: 100vh;
+        line-height: 1.6;
+      }
+
+      .hero {
+        background: var(--bg-hero);
+        padding: 80px 20px;
+        text-align: center;
+        position: relative;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 16px;
+        background: linear-gradient(180deg, #ffffff 0%, #a1a1a6 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hero p {
+        font-size: 1.25rem;
+        color: var(--text-hero-secondary);
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .back-link {
+        position: absolute;
+        top: 24px;
+        left: 24px;
+        color: #007aff;
+        text-decoration: none;
+        font-size: 0.95rem;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        transition: color 0.2s ease;
+      }
+
+      .back-link:hover {
+        color: #5856d6;
+      }
+
+      main {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 60px 20px 80px;
+      }
+
+      .section {
+        margin-bottom: 60px;
+      }
+
+      .section-title {
+        font-size: 1.75rem;
+        font-weight: 600;
+        margin-bottom: 24px;
+        color: var(--text-primary);
+      }
+
+      .contact-card {
+        background: var(--bg-card);
+        border: 1px solid var(--card-border);
+        border-radius: 16px;
+        padding: 32px;
+        box-shadow: var(--card-shadow);
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 24px;
+      }
+
+      .contact-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .contact-icon {
+        width: 48px;
+        height: 48px;
+        background: linear-gradient(135deg, #007aff 0%, #5856d6 100%);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .contact-icon svg {
+        width: 24px;
+        height: 24px;
+        stroke: white;
+        fill: none;
+      }
+
+      .contact-info h3 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 4px;
+        color: var(--text-primary);
+      }
+
+      .contact-info p {
+        color: var(--text-secondary);
+        margin-bottom: 8px;
+      }
+
+      .contact-info a {
+        color: var(--accent-color);
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .contact-info a:hover {
+        text-decoration: underline;
+      }
+
+      .faq-list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .faq-item {
+        background: var(--bg-card);
+        border: 1px solid var(--card-border);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: var(--card-shadow);
+      }
+
+      .faq-question {
+        padding: 20px 24px;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--text-primary);
+      }
+
+      .faq-question:hover {
+        background: var(--card-border);
+      }
+
+      .faq-question svg {
+        width: 20px;
+        height: 20px;
+        stroke: var(--text-secondary);
+        transition: transform 0.3s ease;
+      }
+
+      .faq-item.open .faq-question svg {
+        transform: rotate(180deg);
+      }
+
+      .faq-answer {
+        padding: 0 24px;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        color: var(--text-secondary);
+      }
+
+      .faq-item.open .faq-answer {
+        padding: 0 24px 20px;
+        max-height: 500px;
+      }
+
+      .response-time {
+        background: linear-gradient(
+          135deg,
+          rgba(0, 122, 255, 0.1) 0%,
+          rgba(88, 86, 214, 0.1) 100%
+        );
+        border: 1px solid rgba(0, 122, 255, 0.2);
+        border-radius: 12px;
+        padding: 20px 24px;
+        margin-top: 24px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .response-time svg {
+        width: 24px;
+        height: 24px;
+        stroke: var(--accent-color);
+      }
+
+      .response-time p {
+        color: var(--text-primary);
+        font-size: 0.95rem;
+      }
+
+      footer {
+        text-align: center;
+        padding: 40px 20px;
+        background: var(--bg-footer);
+        border-top: 1px solid var(--footer-border);
+      }
+
+      .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 32px;
+        margin-bottom: 24px;
+        flex-wrap: wrap;
+      }
+
+      .footer-links a {
+        color: #007aff;
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: color 0.2s ease;
+      }
+
+      .footer-links a:hover {
+        color: #5856d6;
+      }
+
+      .footer-copyright {
+        color: var(--text-secondary);
+        font-size: 0.85rem;
+      }
+
+      @media (max-width: 768px) {
+        .hero {
+          padding: 60px 20px;
+        }
+
+        .hero h1 {
+          font-size: 2.25rem;
+        }
+
+        .contact-card {
+          padding: 24px;
+        }
+
+        .contact-item {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .back-link {
+          top: 16px;
+          left: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="hero">
+      <a href="./" class="back-link">
+        <svg
+          width="16"
+          height="16"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M15 8H1M8 15l-7-7 7-7" />
+        </svg>
+        Home
+      </a>
+      <h1>Support</h1>
+      <p>
+        We're here to help. Get answers to your questions or contact us
+        directly.
+      </p>
+    </section>
+
+    <main>
+      <section class="section">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-card">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+            </div>
+            <div class="contact-info">
+              <h3>Email Support</h3>
+              <p>
+                For questions, feedback, or technical issues with any of our
+                apps.
+              </p>
+              <a href="mailto:fairappsmobile@gmail.com"
+                >fairappsmobile@gmail.com</a
+              >
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+                />
+              </svg>
+            </div>
+            <div class="contact-info">
+              <h3>Feature Requests</h3>
+              <p>Have an idea for a new feature? We'd love to hear from you.</p>
+              <a href="mailto:fairappsmobile@gmail.com?subject=Feature Request"
+                >Send a Feature Request</a
+              >
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                <line x1="12" y1="17" x2="12.01" y2="17" />
+              </svg>
+            </div>
+            <div class="contact-info">
+              <h3>Bug Reports</h3>
+              <p>
+                Found a bug? Please include your device model and app version.
+              </p>
+              <a href="mailto:fairappsmobile@gmail.com?subject=Bug Report"
+                >Report a Bug</a
+              >
+            </div>
+          </div>
+
+          <div class="response-time">
+            <svg
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              fill="none"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+            <p>
+              <strong>Response Time:</strong> We typically respond within 24-48
+              hours on business days.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span>Are your apps free to use?</span>
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Yes, all our apps are free to download and use. Some apps may
+                offer optional in-app purchases for additional features, but
+                core functionality is always free.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span>Do your apps collect personal data?</span>
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </div>
+            <div class="faq-answer">
+              <p>
+                We prioritize your privacy. Our apps are designed to work
+                offline whenever possible and do not collect personal
+                information. Any data you create stays on your device unless you
+                explicitly choose to share it.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span>Which devices are supported?</span>
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Our iOS apps support iPhone and iPad running iOS 15.0 or later.
+                Mac apps require macOS 12.0 or later. Android apps support
+                Android 7.0 (Nougat) and above.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span>How do I request a refund?</span>
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </div>
+            <div class="faq-answer">
+              <p>
+                For App Store purchases, please visit
+                <a
+                  href="https://reportaproblem.apple.com"
+                  target="_blank"
+                  rel="noopener"
+                  >reportaproblem.apple.com</a
+                >. For Google Play purchases, visit the Google Play Store app
+                and go to your purchase history. If you need help, contact us
+                via email.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span>An app isn't working properly. What should I do?</span>
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </div>
+            <div class="faq-answer">
+              <p>
+                First, try restarting the app and your device. Make sure you
+                have the latest version installed. If the problem persists,
+                please email us with details about the issue, your device model,
+                and OS version.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span>Can I suggest a new app or feature?</span>
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Absolutely! We love hearing from our users. Send your ideas to
+                <a
+                  href="mailto:fairappsmobile@gmail.com?subject=Feature Request"
+                  >fairappsmobile@gmail.com</a
+                >
+                and we'll consider them for future updates.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-links">
+        <a href="./">Home</a>
+        <a href="ios/">iOS Apps</a>
+        <a href="mailto:fairappsmobile@gmail.com">Contact</a>
+      </div>
+      <p class="footer-copyright">
+        &copy; 2025 Modern Mobile Tools. All rights reserved.
+      </p>
+    </footer>
+
+    <script>
+      function toggleFaq(element) {
+        const faqItem = element.parentElement;
+        faqItem.classList.toggle("open");
+      }
+
+      (function () {
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+          document.documentElement.setAttribute("data-theme", savedTheme);
+        }
+      })();
+    </script>
+  </body>
+</html>
