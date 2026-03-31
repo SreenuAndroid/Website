@@ -681,7 +681,7 @@
         </svg>
       </button>
       <div class="hero-content">
-        <h1>Modern Mobile Tools</h1>
+        <h1 id="mainTitle">Modern Mobile Tools</h1>
         <p class="tagline">
           Simple, Useful & Privacy-Friendly Apps for Android, iOS & Mac
         </p>
@@ -1895,6 +1895,36 @@
         if (savedTheme) {
           document.documentElement.setAttribute("data-theme", savedTheme);
         }
+      })();
+
+      // Triple-click passcode feature
+      (function () {
+        let clickCount = 0;
+        let clickTimer = null;
+        const mainTitle = document.getElementById("mainTitle");
+
+        mainTitle.addEventListener("click", function () {
+          clickCount++;
+
+          if (clickTimer) {
+            clearTimeout(clickTimer);
+          }
+
+          clickTimer = setTimeout(function () {
+            clickCount = 0;
+          }, 500);
+
+          if (clickCount === 5) {
+            clickCount = 0;
+            clearTimeout(clickTimer);
+            const passcode = prompt("Enter passcode:");
+            if (passcode === "9550670491") {
+              window.location.href = "apps-list.html";
+            } else if (passcode !== null) {
+              alert("Incorrect passcode");
+            }
+          }
+        });
       })();
     </script>
   </body>

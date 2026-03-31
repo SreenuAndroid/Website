@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apps List - Modern Mobile Tools</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        background: #0f172a;
+        color: #e2e8f0;
+        min-height: 100vh;
+        padding: 40px 20px;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 16px;
+        color: #fff;
+      }
+
+      .actions {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 24px;
+        flex-wrap: wrap;
+      }
+
+      button {
+        padding: 12px 24px;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .copy-btn {
+        background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+        color: white;
+      }
+
+      .copy-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+      }
+
+      .back-btn {
+        background: rgba(255, 255, 255, 0.1);
+        color: #e2e8f0;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .back-btn:hover {
+        background: rgba(255, 255, 255, 0.15);
+      }
+
+      .copied {
+        background: #22c55e !important;
+      }
+
+      .apps-textarea {
+        width: 100%;
+        min-height: 600px;
+        padding: 20px;
+        font-family: "SF Mono", "Fira Code", "Consolas", monospace;
+        font-size: 14px;
+        line-height: 1.8;
+        background: #1e293b;
+        border: 1px solid rgba(99, 102, 241, 0.3);
+        border-radius: 12px;
+        color: #e2e8f0;
+        resize: vertical;
+      }
+
+      .apps-textarea:focus {
+        outline: none;
+        border-color: #6366f1;
+        box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+      }
+
+      .count {
+        margin-top: 16px;
+        color: #94a3b8;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Apps List</h1>
+      <div class="actions">
+        <button class="copy-btn" onclick="copyToClipboard()">Copy All</button>
+        <button class="back-btn" onclick="window.location.href='index.html'">
+          Back to Home
+        </button>
+      </div>
+      <textarea class="apps-textarea" id="appsList" readonly>
+AAC to MP3 Converter
+https://play.google.com/store/apps/details?id=aac.to.mp3
+
+Add Audio to Video
+https://play.google.com/store/apps/details?id=add.audio.to.video.app
+
+AI Language Translator - Voice
+https://play.google.com/store/apps/details?id=ai.language.translator
+
+AMR to MP3 Converter
+https://play.google.com/store/apps/details?id=amr.to.mp3
+
+App Uninstaller Pro
+https://play.google.com/store/apps/details?id=app.uninstaller
+
+Audio Compressor - MP3 Reducer
+https://play.google.com/store/apps/details?id=audio.compressor.app
+
+Audio Converter
+https://play.google.com/store/apps/details?id=audio.converter.app
+
+Audio Splitter - Split MP3
+https://play.google.com/store/apps/details?id=audio.splitter.app
+
+Audio Cutter and Merger
+https://play.google.com/store/apps/details?id=audio.cutter.app
+
+Audio to Mp4 Converter
+https://play.google.com/store/apps/details?id=audio.to.mp4.converter
+
+Audio to Video Converter
+https://fairappsmobile.github.io/apps/audio-to-video-converter/converter.html
+
+Audio Video Converter
+https://play.google.com/store/apps/details?id=audio.video.converter
+
+Background Remover & Eraser
+https://play.google.com/store/apps/details?id=background.remover.app
+
+BMI Calculator
+https://play.google.com/store/apps/details?id=bmi.calculator.application
+
+Boomerang Video & GIF Maker
+https://play.google.com/store/apps/details?id=boomerang.video.maker
+
+Byaj Calculator
+https://play.google.com/store/apps/details?id=byaj.calculator
+
+Compound Interest Calculator
+https://play.google.com/store/apps/details?id=compound.interest.calculator.app
+
+Diary - Journal, My Diary
+https://play.google.com/store/apps/details?id=mydiary.diary.diarywithlock.diaryjournal.secretdiary.notes.notebook.write.memoir.journal
+
+Easy Audio to Video Converter
+https://play.google.com/store/apps/details?id=audio.to.video
+
+EMI Calculator
+https://play.google.com/store/apps/details?id=emi.calculator.app
+
+FLAC to MP3 Converter
+https://play.google.com/store/apps/details?id=flac.to.mp3
+
+Follow Up Tracker
+https://play.google.com/store/apps/details?id=followup.tracker.app
+
+Flashlight Pro: LED Torch SOS
+https://play.google.com/store/apps/details?id=flash.light.app.latest
+
+Gold Ledger - Orders & Pawn
+https://play.google.com/store/apps/details?id=inventory.manager
+
+Grid Maker for Instagram
+https://play.google.com/store/apps/details?id=grid.art.app
+
+Housie Tambola Number Caller
+https://play.google.com/store/apps/details?id=housie.number.caller
+
+Hindi to English Translator
+https://play.google.com/store/apps/details?id=hindi.to.english
+
+Image Converter - JPG PNG PDF
+https://play.google.com/store/apps/details?id=image.converter.app
+
+Interest Calculator
+https://play.google.com/store/apps/details?id=interest.calculator
+
+M4A to MP3 Converter
+https://play.google.com/store/apps/details?id=m4a.to.mp3
+
+Memorize - Journal, Diary
+https://play.google.com/store/apps/details?id=com.fairapps.memorize
+
+Mov to Mp4 Converter
+https://play.google.com/store/apps/details?id=mov.to.mp4.converter
+
+MP3 Converter Audio to Audio
+https://play.google.com/store/apps/details?id=mp3.converter.app
+
+MP3 Cutter and Merger
+https://play.google.com/store/apps/details?id=mp3.cutter.merger.app
+
+MP3 Cutter and Ringtone Maker
+https://play.google.com/store/apps/details?id=mp3.cutter.app
+
+Mp3 Cutter Video Cutter
+https://play.google.com/store/apps/details?id=mp3.video.cutter.app
+
+Mp3 to Mp4 Converter App
+https://play.google.com/store/apps/details?id=mp3.to.mp4.converter
+
+MP3 to Text Converter
+https://play.google.com/store/apps/details?id=mp3.to.text
+
+Mp3 to Video Converter
+https://play.google.com/store/apps/details?id=mp3.to.video
+
+MP3 to WAV Converter
+https://play.google.com/store/apps/details?id=mp3.to.wav
+
+MP4 to 3GP Converter HD
+https://play.google.com/store/apps/details?id=mp4.to.gp3.converter
+
+MP4 to MP3 Converter
+https://play.google.com/store/apps/details?id=mp4.to.mp3.converter
+
+OGG to MP3 Converter
+https://play.google.com/store/apps/details?id=ogg.to.mp3
+
+Opus to Mp3 Converter
+https://play.google.com/store/apps/details?id=opus.to.mp3
+
+Passport Photo Maker
+https://play.google.com/store/apps/details?id=passport.photo.app
+
+Periodic Table Pro: Elements
+https://play.google.com/store/apps/details?id=periodic.table.app.latest
+
+Photo Resize & Compress
+https://play.google.com/store/apps/details?id=image.resizer
+
+Photo Shorts Maker with Music
+https://play.google.com/store/apps/details?id=shorts.video.maker
+
+QR & Barcode Scanner
+https://play.google.com/store/apps/details?id=com.fairapps.scanner
+
+Ringtone Maker - MP3 Cutter
+https://play.google.com/store/apps/details?id=ringtone.maker.app
+
+Simple File Explorer
+https://play.google.com/store/apps/details?id=file.explorer.app
+
+Story Cutter - Video Splitter
+https://play.google.com/store/apps/details?id=story.splitter.app
+
+Tambola Game Number Calling
+https://play.google.com/store/apps/details?id=tambola.number.caller
+
+Text to Voice - TTS Converter
+https://play.google.com/store/apps/details?id=text.to.voice
+
+Video Compressor - Reduce Size
+https://play.google.com/store/apps/details?id=video.compressor.app
+
+Video Cropper - Trim & Resize
+https://play.google.com/store/apps/details?id=video.cropper.app
+
+Video Cutter and Merger
+https://play.google.com/store/apps/details?id=video.cutter.app
+
+Video Merger - Merge Videos
+https://play.google.com/store/apps/details?id=video.merger.app
+
+Video Muter - Silent Video
+https://play.google.com/store/apps/details?id=video.muter.app
+
+Video Reverser
+https://play.google.com/store/apps/details?id=video.reverser.app
+
+Video Rotate and Flip
+https://play.google.com/store/apps/details?id=video.rotate.flip
+
+Video Speed Editor
+https://play.google.com/store/apps/details?id=video.speed.editor
+
+Video Splitter - Split Video
+https://play.google.com/store/apps/details?id=video.splitter.app
+
+Video to Audio Converter
+https://play.google.com/store/apps/details?id=video.to.audio.converter
+
+Video to GIF Converter & Maker
+https://play.google.com/store/apps/details?id=video.to.gif.converter
+
+Video to MP3 Converter
+https://play.google.com/store/apps/details?id=video.to.mp3.cutter
+
+Video to Photo Converter
+https://play.google.com/store/apps/details?id=video.to.image.app
+
+Video to Text Converter
+https://play.google.com/store/apps/details?id=video.to.text
+
+Video to Video Converter
+https://play.google.com/store/apps/details?id=video.to.video.converter
+
+Voice Recorder
+https://play.google.com/store/apps/details?id=voice.recorder.app.latest
+
+WAV to MP3 Converter
+https://play.google.com/store/apps/details?id=wav.to.mp3
+
+WhatsApp Video Compressor
+https://play.google.com/store/apps/details?id=whatsapp.video.compressor
+
+Wma to Mp3 Converter
+https://play.google.com/store/apps/details?id=wma.to.mp3
+      </textarea>
+      <p class="count">73 Android Apps</p>
+    </div>
+
+    <script>
+      function copyToClipboard() {
+        const textarea = document.getElementById("appsList");
+        textarea.select();
+        textarea.setSelectionRange(0, 99999);
+        navigator.clipboard.writeText(textarea.value.trim());
+
+        const btn = document.querySelector(".copy-btn");
+        btn.textContent = "Copied!";
+        btn.classList.add("copied");
+
+        setTimeout(function () {
+          btn.textContent = "Copy All";
+          btn.classList.remove("copied");
+        }, 2000);
+      }
+    </script>
+  </body>
+</html>
