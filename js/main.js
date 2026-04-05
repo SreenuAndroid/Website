@@ -1,3 +1,29 @@
+// Load apps from JSON and render grid
+(function () {
+  const appsGrid = document.getElementById("apps-grid");
+  if (appsGrid) {
+    fetch("data/apps.json")
+      .then((response) => response.json())
+      .then((apps) => {
+        appsGrid.innerHTML = apps
+          .map(
+            (app) => `
+          <div class="app">
+            <img src="${app.icon}" alt="${app.title} Icon" />
+            <h2>${app.title}</h2>
+            <p>${app.description}</p>
+            <a href="${app.link}"${app.link.startsWith("http") ? ' target="_blank" rel="noopener noreferrer"' : ""}>Download</a>
+          </div>
+        `,
+          )
+          .join("");
+      })
+      .catch((error) => {
+        console.error("Error loading apps:", error);
+      });
+  }
+})();
+
 function toggleTheme() {
   const html = document.documentElement;
   const currentTheme = html.getAttribute("data-theme");
