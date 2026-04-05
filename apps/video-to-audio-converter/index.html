@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Video to Audio Converter Total - Convert video to MP3 and extract audio instantly. Fast offline processing for iOS."
+    />
+    <title>Video to Audio Converter Total - Convert Video to MP3</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        background: #f7fafc;
+        color: #1a202c;
+        line-height: 1.6;
+      }
+
+      .hero {
+        background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+        color: white;
+        padding: 80px 20px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>');
+        opacity: 0.4;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 16px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      .hero .tagline {
+        font-size: 1.25rem;
+        opacity: 0.95;
+        margin-bottom: 32px;
+        font-weight: 300;
+      }
+
+      .app-badges {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .app-badges-wrapper {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        border-radius: 16px;
+        padding: 24px 32px;
+        display: inline-block;
+        animation: pulse-glow 2s ease-in-out infinite;
+      }
+
+      @keyframes pulse-glow {
+        0%,
+        100% {
+          box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+        50% {
+          box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+        }
+      }
+
+      .download-label {
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin-bottom: 16px;
+        opacity: 0.9;
+      }
+
+      .badge-ios {
+        height: 54px;
+        transition: transform 0.2s ease;
+      }
+
+      .badge-ios:hover {
+        transform: scale(1.08);
+      }
+
+      main {
+        max-width: 1200px;
+        margin: -40px auto 0;
+        padding: 0 20px 60px;
+        position: relative;
+      }
+
+      .features-section {
+        background: white;
+        border-radius: 24px;
+        padding: 48px 32px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        margin-bottom: 32px;
+      }
+
+      .section-title {
+        font-size: 2rem;
+        color: #2d3748;
+        text-align: center;
+        margin-bottom: 48px;
+        font-weight: 700;
+      }
+
+      .section-title span {
+        background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+      }
+
+      .feature-card {
+        padding: 28px;
+        border-radius: 16px;
+        background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        border: 1px solid #e2e8f0;
+        transition: all 0.3s ease;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px rgba(16, 185, 129, 0.15);
+        border-color: #10b981;
+      }
+
+      .feature-icon {
+        width: 48px;
+        height: 48px;
+        background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 16px;
+        font-size: 24px;
+      }
+
+      .feature-card h3 {
+        font-size: 1.15rem;
+        color: #2d3748;
+        margin-bottom: 8px;
+        font-weight: 600;
+      }
+
+      .feature-card p {
+        color: #64748b;
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+
+      .highlights {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin-bottom: 32px;
+      }
+
+      .highlight-card {
+        background: white;
+        border-radius: 16px;
+        padding: 24px;
+        text-align: center;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        border: 1px solid #e2e8f0;
+      }
+
+      .highlight-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .highlight-label {
+        color: #64748b;
+        font-size: 0.9rem;
+        margin-top: 4px;
+      }
+
+      .support-section {
+        background: white;
+        border-radius: 24px;
+        padding: 40px 32px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        text-align: center;
+      }
+
+      .support-section h2 {
+        font-size: 1.5rem;
+        color: #2d3748;
+        margin-bottom: 16px;
+      }
+
+      .support-section p {
+        color: #64748b;
+        margin-bottom: 24px;
+      }
+
+      .support-links {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .support-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 24px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.2s ease;
+      }
+
+      .support-link.primary {
+        background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+        color: white;
+      }
+
+      .support-link.primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+      }
+
+      .support-link.secondary {
+        background: #f1f5f9;
+        color: #475569;
+      }
+
+      .support-link.secondary:hover {
+        background: #e2e8f0;
+      }
+
+      footer {
+        text-align: center;
+        padding: 40px 20px;
+        background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+        color: white;
+      }
+
+      footer a {
+        color: white;
+        text-decoration: none;
+        opacity: 0.9;
+      }
+
+      footer a:hover {
+        opacity: 1;
+        text-decoration: underline;
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 24px;
+        justify-content: center;
+        margin-bottom: 16px;
+        flex-wrap: wrap;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .feature-card {
+        animation: fadeInUp 0.5s ease backwards;
+      }
+
+      .feature-card:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .feature-card:nth-child(2) {
+        animation-delay: 0.15s;
+      }
+      .feature-card:nth-child(3) {
+        animation-delay: 0.2s;
+      }
+      .feature-card:nth-child(4) {
+        animation-delay: 0.25s;
+      }
+      .feature-card:nth-child(5) {
+        animation-delay: 0.3s;
+      }
+      .feature-card:nth-child(6) {
+        animation-delay: 0.35s;
+      }
+
+      @media (max-width: 768px) {
+        .hero {
+          padding: 60px 20px;
+        }
+
+        .hero h1 {
+          font-size: 2.25rem;
+        }
+
+        .features-section {
+          padding: 32px 20px;
+        }
+
+        .section-title {
+          font-size: 1.5rem;
+          margin-bottom: 32px;
+        }
+
+        .features-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero h1 {
+          font-size: 1.85rem;
+        }
+
+        .hero .tagline {
+          font-size: 1.1rem;
+        }
+
+        .highlight-number {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Video to Audio Converter Total</h1>
+        <p class="tagline">
+          Convert video to MP3 and extract audio instantly with fast offline
+          processing
+        </p>
+        <div class="app-badges-wrapper">
+          <p class="download-label">Download Now</p>
+          <div class="app-badges">
+            <a
+              href="https://apps.apple.com/in/app/video-to-audio-converter-total/id6761326061"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83"
+                alt="Download on the App Store"
+                class="badge-ios"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <div class="highlights">
+        <div class="highlight-card">
+          <div class="highlight-number">10+</div>
+          <div class="highlight-label">Video Formats</div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-number">7+</div>
+          <div class="highlight-label">Audio Outputs</div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-number">Fast</div>
+          <div class="highlight-label">Conversion</div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-number">100%</div>
+          <div class="highlight-label">Offline & Private</div>
+        </div>
+      </div>
+
+      <section class="features-section">
+        <h2 class="section-title">
+          Everything You Need to <span>Convert Video to Audio</span>
+        </h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg
+                width="24"
+                height="24"
+                fill="none"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M9 18V5l12-2v13" />
+                <circle cx="6" cy="18" r="3" />
+                <circle cx="18" cy="16" r="3" />
+              </svg>
+            </div>
+            <h3>Video to MP3</h3>
+            <p>
+              Convert any video file to MP3 audio format. Extract high-quality
+              audio from MP4, MOV, MKV, AVI, and more video formats.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg
+                width="24"
+                height="24"
+                fill="none"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polygon points="23 7 16 12 23 17 23 7" />
+                <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
+              </svg>
+            </div>
+            <h3>Multiple Video Formats</h3>
+            <p>
+              Support for all popular video formats including MP4, MOV, MKV,
+              AVI, and more. Convert any video to audio seamlessly.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg
+                width="24"
+                height="24"
+                fill="none"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"
+                />
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+                <line x1="12" y1="19" x2="12" y2="23" />
+                <line x1="8" y1="23" x2="16" y2="23" />
+              </svg>
+            </div>
+            <h3>Multiple Audio Outputs</h3>
+            <p>
+              Export to MP3, AAC, M4A, WAV, FLAC, OGG, and more. Choose the
+              perfect format for your needs.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg
+                width="24"
+                height="24"
+                fill="none"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+              </svg>
+            </div>
+            <h3>High Quality Output</h3>
+            <p>
+              Extract audio with no quality loss. Maintain original audio
+              fidelity during conversion for professional results.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg
+                width="24"
+                height="24"
+                fill="none"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </div>
+            <h3>Offline Processing</h3>
+            <p>
+              All conversions happen on your device. No uploads required,
+              ensuring complete privacy and fast processing.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg
+                width="24"
+                height="24"
+                fill="none"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="18" cy="5" r="3" />
+                <circle cx="6" cy="12" r="3" />
+                <circle cx="18" cy="19" r="3" />
+                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
+                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+              </svg>
+            </div>
+            <h3>Easy Sharing</h3>
+            <p>
+              Share converted audio files directly to music apps, messaging
+              platforms, or save them for offline listening.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="support-section">
+        <h2>Need Help?</h2>
+        <p>We're here to help you with any questions or issues.</p>
+        <div class="support-links">
+          <a
+            href="mailto:fairappsmobile@gmail.com"
+            class="support-link primary"
+          >
+            <svg
+              width="18"
+              height="18"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+              />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+            Contact Support
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-links">
+        <a href="../../">All Apps</a>
+        <a href="../../ios/">iOS Apps</a>
+        <a href="mailto:fairappsmobile@gmail.com">Contact</a>
+      </div>
+      <p>&copy; 2026 Video to Audio Converter Total. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
