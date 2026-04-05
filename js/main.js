@@ -1,5 +1,5 @@
 // Load apps from JSON and render grid
-(function () {
+document.addEventListener("DOMContentLoaded", function () {
   const appsGrid = document.getElementById("apps-grid");
   if (appsGrid) {
     fetch("data/apps.json")
@@ -22,7 +22,7 @@
         console.error("Error loading apps:", error);
       });
   }
-})();
+});
 
 function toggleTheme() {
   const html = document.documentElement;
