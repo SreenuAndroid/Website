@@ -51,7 +51,7 @@ function toggleTheme() {
   }
 })();
 
-(function () {
+document.addEventListener("DOMContentLoaded", function () {
   let clickCount = 0;
   let clickTimer = null;
   const mainTitle = document.getElementById("mainTitle");
@@ -80,4 +80,4 @@ function toggleTheme() {
       }
     });
   }
-})();
+});
