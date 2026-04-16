@@ -3,663 +3,76 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Audio Splitter - MP3 Cutter - Split MP3 and audio files into parts. Fast offline audio splitting for iOS and Android."
-    />
-    <title>Audio Splitter - MP3 Cutter | Split Audio Files</title>
-    <style>
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-      body {
-        font-family:
-          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          "Helvetica Neue", Arial, sans-serif;
-        background: #f7fafc;
-        color: #1a202c;
-        line-height: 1.6;
-      }
-
-      .hero {
-        background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
-        color: white;
-        padding: 80px 20px;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .hero::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>');
-        opacity: 0.4;
-      }
-
-      .back-btn {
-        position: absolute;
-        top: 20px;
-        left: 20px;
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        padding: 10px 16px;
-        background: rgba(255, 255, 255, 0.15);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 8px;
-        color: white;
-        text-decoration: none;
-        font-size: 0.9rem;
-        font-weight: 500;
-        transition: all 0.2s ease;
-        z-index: 10;
-      }
-
-      .back-btn:hover {
-        background: rgba(255, 255, 255, 0.25);
-        transform: translateX(-2px);
-      }
-
-      .back-btn svg {
-        width: 16px;
-        height: 16px;
-      }
-
-      .hero-content {
-        position: relative;
-        z-index: 1;
-        max-width: 800px;
-        margin: 0 auto;
-      }
-
-      .hero h1 {
-        font-size: 3rem;
-        font-weight: 700;
-        margin-bottom: 16px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-      }
-
-      .hero .tagline {
-        font-size: 1.25rem;
-        opacity: 0.95;
-        margin-bottom: 32px;
-        font-weight: 300;
-      }
-
-      .app-badges {
-        display: flex;
-        gap: 16px;
-        justify-content: center;
-        flex-wrap: wrap;
-        align-items: center;
-      }
-
-      .app-badges-wrapper {
-        background: rgba(255, 255, 255, 0.15);
-        backdrop-filter: blur(10px);
-        border-radius: 16px;
-        padding: 24px 32px;
-        display: inline-block;
-        animation: pulse-glow 2s ease-in-out infinite;
-      }
-
-      @keyframes pulse-glow {
-        0%,
-        100% {
-          box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-        }
-        50% {
-          box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
-        }
-      }
-
-      .download-label {
-        font-size: 0.85rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
-        margin-bottom: 16px;
-        opacity: 0.9;
-      }
-
-      .badge-ios {
-        height: 54px;
-        transition: transform 0.2s ease;
-      }
-
-      .badge-ios:hover {
-        transform: scale(1.08);
-      }
-
-      .badge-android {
-        height: 80px;
-        margin: -13px 0;
-        transition: transform 0.2s ease;
-      }
-
-      .badge-android:hover {
-        transform: scale(1.08);
-      }
-
-      main {
-        max-width: 1200px;
-        margin: -40px auto 0;
-        padding: 0 20px 60px;
-        position: relative;
-      }
-
-      .features-section {
-        background: white;
-        border-radius: 24px;
-        padding: 48px 32px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        margin-bottom: 32px;
-      }
-
-      .section-title {
-        font-size: 2rem;
-        color: #2d3748;
-        text-align: center;
-        margin-bottom: 48px;
-        font-weight: 700;
-      }
-
-      .section-title span {
-        background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-
-      .features-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 24px;
-      }
-
-      .feature-card {
-        padding: 28px;
-        border-radius: 16px;
-        background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-        border: 1px solid #e2e8f0;
-        transition: all 0.3s ease;
-      }
-
-      .feature-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 12px 24px rgba(245, 158, 11, 0.15);
-        border-color: #f59e0b;
-      }
-
-      .feature-icon {
-        width: 48px;
-        height: 48px;
-        background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 16px;
-        font-size: 24px;
-      }
-
-      .feature-card h3 {
-        font-size: 1.15rem;
-        color: #2d3748;
-        margin-bottom: 8px;
-        font-weight: 600;
-      }
-
-      .feature-card p {
-        color: #64748b;
-        font-size: 0.95rem;
-        line-height: 1.6;
-      }
-
-      .highlights {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 20px;
-        margin-bottom: 32px;
-      }
-
-      .highlight-card {
-        background: white;
-        border-radius: 16px;
-        padding: 24px;
-        text-align: center;
-        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-        border: 1px solid #e2e8f0;
-      }
-
-      .highlight-number {
-        font-size: 2.5rem;
-        font-weight: 700;
-        background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-
-      .highlight-label {
-        color: #64748b;
-        font-size: 0.9rem;
-        margin-top: 4px;
-      }
-
-      .support-section {
-        background: white;
-        border-radius: 24px;
-        padding: 40px 32px;
-        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-        text-align: center;
-      }
-
-      .support-section h2 {
-        font-size: 1.5rem;
-        color: #2d3748;
-        margin-bottom: 16px;
-      }
-
-      .support-section p {
-        color: #64748b;
-        margin-bottom: 24px;
-      }
-
-      .support-links {
-        display: flex;
-        gap: 16px;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-
-      .support-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 12px 24px;
-        border-radius: 10px;
-        text-decoration: none;
-        font-weight: 500;
-        transition: all 0.2s ease;
-      }
-
-      .support-link.primary {
-        background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
-        color: white;
-      }
-
-      .support-link.primary:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
-      }
-
-      .support-link.secondary {
-        background: #f1f5f9;
-        color: #475569;
-      }
-
-      .support-link.secondary:hover {
-        background: #e2e8f0;
-      }
-
-      footer {
-        text-align: center;
-        padding: 40px 20px;
-        background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
-        color: white;
-      }
-
-      footer a {
-        color: white;
-        text-decoration: none;
-        opacity: 0.9;
-      }
-
-      footer a:hover {
-        opacity: 1;
-        text-decoration: underline;
-      }
-
-      .footer-links {
-        display: flex;
-        gap: 24px;
-        justify-content: center;
-        margin-bottom: 16px;
-        flex-wrap: wrap;
-      }
-
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .feature-card {
-        animation: fadeInUp 0.5s ease backwards;
-      }
-
-      .feature-card:nth-child(1) {
-        animation-delay: 0.1s;
-      }
-      .feature-card:nth-child(2) {
-        animation-delay: 0.15s;
-      }
-      .feature-card:nth-child(3) {
-        animation-delay: 0.2s;
-      }
-      .feature-card:nth-child(4) {
-        animation-delay: 0.25s;
-      }
-      .feature-card:nth-child(5) {
-        animation-delay: 0.3s;
-      }
-      .feature-card:nth-child(6) {
-        animation-delay: 0.35s;
-      }
-
-      @media (max-width: 768px) {
-        .hero {
-          padding: 60px 20px;
-        }
-
-        .hero h1 {
-          font-size: 2.25rem;
-        }
-
-        .features-section {
-          padding: 32px 20px;
-        }
-
-        .section-title {
-          font-size: 1.5rem;
-          margin-bottom: 32px;
-        }
-
-        .features-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .hero h1 {
-          font-size: 1.85rem;
-        }
-
-        .hero .tagline {
-          font-size: 1.1rem;
-        }
-
-        .highlight-number {
-          font-size: 2rem;
-        }
-      }
-    </style>
+    <meta name="description" content="" />
+    <title></title>
+    <link rel="stylesheet" href="../../css/app-page.css" />
   </head>
   <body>
-    <section class="hero">
-      <a href="../../" class="back-btn">
-        <svg
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          viewBox="0 0 24 24"
-        >
-          <path d="M19 12H5M12 19l-7-7 7-7" />
-        </svg>
-        All Apps
-      </a>
-      <div class="hero-content">
-        <h1>Audio Splitter - MP3 Cutter</h1>
-        <p class="tagline">
-          Split MP3 and audio files into multiple parts with precision. Fast
-          offline audio processing.
-        </p>
-        <div class="app-badges-wrapper">
-          <p class="download-label">Download Now</p>
-          <div class="app-badges">
-            <a
-              href="https://apps.apple.com/in/app/audio-splitter-mp3-cutter/id6761720164"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83"
-                alt="Download on the App Store"
-                class="badge-ios"
-              />
-            </a>
-            <a
-              href="https://play.google.com/store/apps/details?id=audio.splitter.app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
-                alt="Get it on Google Play"
-                class="badge-android"
-              />
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <main>
-      <div class="highlights">
-        <div class="highlight-card">
-          <div class="highlight-number">10+</div>
-          <div class="highlight-label">Audio Formats</div>
-        </div>
-        <div class="highlight-card">
-          <div class="highlight-number">Precise</div>
-          <div class="highlight-label">Splitting</div>
-        </div>
-        <div class="highlight-card">
-          <div class="highlight-number">Fast</div>
-          <div class="highlight-label">Processing</div>
-        </div>
-        <div class="highlight-card">
-          <div class="highlight-number">100%</div>
-          <div class="highlight-label">Offline & Private</div>
-        </div>
-      </div>
-
-      <section class="features-section">
-        <h2 class="section-title">
-          Everything You Need to <span>Split Audio Files</span>
-        </h2>
-        <div class="features-grid">
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg
-                width="24"
-                height="24"
-                fill="none"
-                stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M9 18V5l12-2v13" />
-                <circle cx="6" cy="18" r="3" />
-                <circle cx="18" cy="16" r="3" />
-              </svg>
-            </div>
-            <h3>Split MP3 Files</h3>
-            <p>
-              Split any MP3 file into multiple parts with precise control.
-              Choose exact start and end points for each segment.
-            </p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg
-                width="24"
-                height="24"
-                fill="none"
-                stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
-                <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
-                <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
-              </svg>
-            </div>
-            <h3>Multiple Formats</h3>
-            <p>
-              Support for MP3, WAV, M4A, AAC, FLAC, OGG, and more audio formats.
-              Split any audio file with ease.
-            </p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg
-                width="24"
-                height="24"
-                fill="none"
-                stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <circle cx="12" cy="12" r="10" />
-                <polyline points="12 6 12 12 16 14" />
-              </svg>
-            </div>
-            <h3>Precise Timing</h3>
-            <p>
-              Set exact timestamps for splitting with millisecond precision.
-              Perfect for creating ringtones or audio clips.
-            </p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg
-                width="24"
-                height="24"
-                fill="none"
-                stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
-              </svg>
-            </div>
-            <h3>Waveform Preview</h3>
-            <p>
-              Visual waveform display helps you identify the perfect split
-              points. See exactly where to cut your audio.
-            </p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg
-                width="24"
-                height="24"
-                fill="none"
-                stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-              </svg>
-            </div>
-            <h3>Offline & Private</h3>
-            <p>
-              All processing happens on your device. No uploads required,
-              ensuring complete privacy and security of your files.
-            </p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg
-                width="24"
-                height="24"
-                fill="none"
-                stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <circle cx="18" cy="5" r="3" />
-                <circle cx="6" cy="12" r="3" />
-                <circle cx="18" cy="19" r="3" />
-                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
-                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
-              </svg>
-            </div>
-            <h3>Easy Sharing</h3>
-            <p>
-              Share split audio files directly to music apps, messaging
-              platforms, or save them for later use.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="support-section">
-        <h2>Need Help?</h2>
-        <p>We're here to help you with any questions or issues.</p>
-        <div class="support-links">
-          <a
-            href="mailto:fairappsmobile@gmail.com"
-            class="support-link primary"
-          >
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path
-                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-              />
-              <polyline points="22,6 12,13 2,6" />
-            </svg>
-            Contact Support
-          </a>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <div class="footer-links">
-        <a href="../../">All Apps</a>
-        <a href="../../ios/">iOS Apps</a>
-        <a href="mailto:fairappsmobile@gmail.com">Contact</a>
-      </div>
-      <p>&copy; 2026 Audio Splitter - MP3 Cutter. All rights reserved.</p>
-    </footer>
+    <div id="app-root"></div>
+    <script src="../../js/app-page.js"></script>
+    <script>
+      renderAppPage({
+        appName: "Audio Splitter - MP3 Cutter",
+        title: "Audio Splitter - MP3 Cutter | Split Audio Files",
+        description:
+          "Audio Splitter - MP3 Cutter - Split MP3 and audio files into parts. Fast offline audio splitting for iOS and Android.",
+        tagline:
+          "Split MP3 and audio files into multiple parts with precision. Fast offline audio processing.",
+        featureTitle: "Split Audio Files",
+        appStoreUrl:
+          "https://apps.apple.com/in/app/audio-splitter-mp3-cutter/id6761720164",
+        playStoreUrl:
+          "https://play.google.com/store/apps/details?id=audio.splitter.app",
+        colors: {
+          primary: "#f59e0b",
+          secondary: "#ef4444",
+          shadow: "rgba(245, 158, 11, 0.15)",
+        },
+        highlights: [
+          { number: "10+", label: "Audio Formats" },
+          { number: "Precise", label: "Splitting" },
+          { number: "Fast", label: "Processing" },
+          { number: "100%", label: "Offline & Private" },
+        ],
+        features: [
+          {
+            icon: ICONS.music,
+            title: "Split MP3 Files",
+            description:
+              "Split any MP3 file into multiple parts with precise control. Choose exact start and end points for each segment.",
+          },
+          {
+            icon: ICONS.speaker,
+            title: "Multiple Formats",
+            description:
+              "Support for MP3, WAV, M4A, AAC, FLAC, OGG, and more audio formats. Split any audio file with ease.",
+          },
+          {
+            icon: ICONS.clock,
+            title: "Precise Timing",
+            description:
+              "Set exact timestamps for splitting with millisecond precision. Perfect for creating ringtones or audio clips.",
+          },
+          {
+            icon: ICONS.quality,
+            title: "Waveform Preview",
+            description:
+              "Visual waveform display helps you identify the perfect split points. See exactly where to cut your audio.",
+          },
+          {
+            icon: ICONS.lock,
+            title: "Offline & Private",
+            description:
+              "All processing happens on your device. No uploads required, ensuring complete privacy and security of your files.",
+          },
+          {
+            icon: ICONS.share,
+            title: "Easy Sharing",
+            description:
+              "Share split audio files directly to music apps, messaging platforms, or save them for later use.",
+          },
+        ],
+      });
+    </script>
   </body>
 </html>
