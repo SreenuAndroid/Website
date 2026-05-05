@@ -5,6 +5,22 @@ document.addEventListener("DOMContentLoaded", function () {
     fetch("data/apps.json")
       .then((response) => response.json())
       .then((apps) => {
+        const androidHeroStat = document.querySelector(
+          ".hero .stats-container .stat-number",
+        );
+        const androidSectionBadge = document.querySelector("main .count-badge");
+
+        const count = apps.length;
+        document.title = document.title.replace(/\d+(?= Apps)/, String(count));
+
+        if (androidHeroStat) {
+          androidHeroStat.textContent = String(count);
+        }
+
+        if (androidSectionBadge) {
+          androidSectionBadge.textContent = `${count} Apps`;
+        }
+
         appsGrid.innerHTML = apps
           .map(
             (app) => `
