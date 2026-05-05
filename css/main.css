@@ -322,6 +322,18 @@ body {
   border-color: var(--btn-secondary-border);
 }
 
+.cta-btn.app-store {
+  background: #000000;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.cta-btn.app-store:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+}
+
 /* Main Content */
 main {
   max-width: 1400px;
