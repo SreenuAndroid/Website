@@ -25,6 +25,23 @@
   --btn-secondary-border: rgba(255, 255, 255, 0.4);
   --btn-secondary-hover: rgba(255, 255, 255, 0.3);
   --badge-text: #ffffff;
+  --hero-cta-play-gradient: linear-gradient(
+    135deg,
+    #0f9d58 0%,
+    #00c853 55%,
+    #34d399 100%
+  );
+  --hero-cta-play-shadow: 0 10px 28px rgba(15, 157, 88, 0.35);
+  --hero-cta-play-shadow-hover: 0 14px 36px rgba(15, 157, 88, 0.45);
+  --hero-cta-app-bg: rgba(255, 255, 255, 0.14);
+  --hero-cta-app-border: rgba(255, 255, 255, 0.35);
+  --hero-cta-app-text: #ffffff;
+  --hero-cta-app-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+  --hero-cta-app-shadow-hover: 0 14px 36px rgba(0, 0, 0, 0.3);
+  --hero-cta-contact-bg: rgba(255, 255, 255, 0.08);
+  --hero-cta-contact-border: rgba(255, 255, 255, 0.28);
+  --hero-cta-contact-text: rgba(255, 255, 255, 0.95);
+  --hero-cta-contact-hover-bg: rgba(255, 255, 255, 0.14);
 }
 
 /* Theme toggle button */
@@ -300,15 +317,16 @@ body {
   transition: all 0.3s ease;
 }
 
-.cta-btn.primary {
-  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-  color: white;
-  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.4);
+.cta-btn.play-store {
+  background: var(--hero-cta-play-gradient);
+  color: #ffffff;
+  box-shadow: var(--hero-cta-play-shadow);
 }
 
-.cta-btn.primary:hover {
+.cta-btn.play-store:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(99, 102, 241, 0.5);
+  filter: saturate(1.05) brightness(1.03);
+  box-shadow: var(--hero-cta-play-shadow-hover);
 }
 
 .cta-btn.secondary {
@@ -323,15 +341,30 @@ body {
 }
 
 .cta-btn.app-store {
-  background: #000000;
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  background: var(--hero-cta-app-bg);
+  color: var(--hero-cta-app-text);
+  border: 1px solid var(--hero-cta-app-border);
+  box-shadow: var(--hero-cta-app-shadow);
+  backdrop-filter: blur(12px);
 }
 
 .cta-btn.app-store:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: var(--hero-cta-app-shadow-hover);
+}
+
+.cta-btn.contact {
+  background: var(--hero-cta-contact-bg);
+  color: var(--hero-cta-contact-text);
+  border: 1px solid var(--hero-cta-contact-border);
+  backdrop-filter: blur(12px);
+}
+
+.cta-btn.contact:hover {
+  transform: translateY(-2px);
+  background: var(--hero-cta-contact-hover-bg);
+  border-color: rgba(255, 255, 255, 0.38);
 }
 
 /* Main Content */
