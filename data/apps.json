@@ -36,10 +36,10 @@
     "link": "https://play.google.com/store/apps/details?id=audio.compressor.app"
   },
   {
-    "title": "Audio Converter",
-    "description": "Convert audio to other audio formats.",
-    "icon": "https://play-lh.googleusercontent.com/B-WbnqjAAbHAc1Uw6oJxwj0rnAeE-S7PGEo6-8p30nNR9rN4LFwsQsMf12cAErm_hXyblh_VpZMoRW_Y3L1tHw=w480-h960-rw",
-    "link": "https://play.google.com/store/apps/details?id=audio.converter.app"
+    "title": "Audio Converter: MP3 AAC WAV",
+    "description": "Batch offline audio conversion for MP3, WAV, FLAC, AAC, and more on iPhone, iPad, and Android.",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/09/06/bc/0906bcec-593b-8a18-ecd9-3007bb9a0e05/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+    "link": "apps/audio-converter/"
   },
   {
     "title": "Audio Splitter - Split MP3",
