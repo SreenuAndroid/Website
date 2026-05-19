@@ -378,10 +378,10 @@
     "link": "https://play.google.com/store/apps/details?id=video.speed.editor"
   },
   {
-    "title": "Video Splitter - Split Video",
-    "description": "Split videos into multiple parts.",
+    "title": "Video Splitter - Split Videos",
+    "description": "Split long videos into story parts for WhatsApp, Instagram, and Facebook.",
     "icon": "https://play-lh.googleusercontent.com/__fDjyTUB8e7UwtgzlNf_iLg4dAkko6yW-wDmfzcCUR65MGJDOUB03YI7baWZ6OgHz2ANnMvfhQoc9YhNnJYbg=w240-h480-rw",
-    "link": "https://play.google.com/store/apps/details?id=video.splitter.app"
+    "link": "apps/video-splitter/"
   },
   {
     "title": "Video to Audio Converter",
