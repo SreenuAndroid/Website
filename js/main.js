@@ -1,3 +1,10 @@
+function appLinkAttrs(link) {
+  if (link.startsWith("http") || link.startsWith("apps/")) {
+    return ' target="_blank" rel="noopener noreferrer"';
+  }
+  return "";
+}
+
 // Load apps from JSON and render grid
 document.addEventListener("DOMContentLoaded", function () {
   const appsGrid = document.getElementById("apps-grid");
@@ -28,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <img src="${app.icon}" alt="${app.title} Icon" />
             <h2>${app.title}</h2>
             <p>${app.description}</p>
-            <a href="${app.link}"${app.link.startsWith("http") ? ' target="_blank" rel="noopener noreferrer"' : ""}>Download</a>
+            <a href="${app.link}"${appLinkAttrs(app.link)}>Download</a>
           </div>
         `,
           )
