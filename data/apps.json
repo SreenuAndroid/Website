@@ -421,9 +421,9 @@
   },
   {
     "title": "Video to Video Converter",
-    "description": "Convert videos to different formats.",
+    "description": "Convert videos between MP4, MKV, AVI, MOV, WEBM, 3GP and more.",
     "icon": "https://play-lh.googleusercontent.com/FRK7ots_PXY1m5aNbn4Al3C9kMblmZxpEdfd7tr8kdq7tkXnWyqSI_mFbeGpT8hxvL_jglEDS4FyCmyHCMUB=w480-h960-rw",
-    "link": "https://play.google.com/store/apps/details?id=video.to.video.converter"
+    "link": "apps/video-to-video-converter/"
   },
   {
     "title": "Voice Recorder",
