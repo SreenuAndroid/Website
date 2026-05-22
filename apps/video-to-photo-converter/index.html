@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <title></title>
+    <link rel="stylesheet" href="../../css/app-page.css" />
+  </head>
+  <body>
+    <div id="app-root"></div>
+    <script src="../../js/app-page.js"></script>
+    <script>
+      renderAppPage({
+        appName: "Video to Photo Converter Easy",
+        title: "Video to Photo Converter - Extract Frames from Video",
+        description:
+          "Video to Photo Converter Easy - Extract frames from video as JPEG, PNG, or WEBP. Interval, frame count, or manual capture on iOS and Android.",
+        tagline:
+          "Extract high-quality stills from any video with interval, frame count, or manual capture",
+        featureTitle: "Extract Photos from Video",
+        appStoreUrl:
+          "https://apps.apple.com/in/app/video-to-photo-converter-easy/id6771607502",
+        playStoreUrl:
+          "https://play.google.com/store/apps/details?id=video.to.image.app",
+        colors: {
+          primary: "#14b8a6",
+          secondary: "#0d9488",
+          shadow: "rgba(20, 184, 166, 0.15)",
+        },
+        highlights: [
+          { number: "3", label: "Capture Modes" },
+          { number: "JPEG/PNG/WEBP", label: "Export Formats" },
+          { number: "Batch", label: "Frame Extract" },
+          { number: "100%", label: "Offline & Private" },
+        ],
+        features: [
+          {
+            icon: ICONS.clock,
+            title: "Interval Capture",
+            description:
+              "Extract images from video at custom time intervals. Perfect for thumbnails, storyboards, and capturing moments across long clips.",
+          },
+          {
+            icon: ICONS.layers,
+            title: "Frame Count Mode",
+            description:
+              "Split video into images evenly across the timeline. Export a set number of frames spread across the full duration automatically.",
+          },
+          {
+            icon: ICONS.video,
+            title: "Manual Frame Capture",
+            description:
+              "Pause, scrub, and grab the exact frame you need on demand. Ideal for highlight frames, meme stills, and precise shots.",
+          },
+          {
+            icon: ICONS.image,
+            title: "JPEG, PNG & WEBP",
+            description:
+              "Save stills as JPEG for smaller files, PNG for lossless clarity, or WEBP for a modern balance. High quality output for covers and crops.",
+          },
+          {
+            icon: ICONS.offline,
+            title: "Offline Processing",
+            description:
+              "Extract frames on your device with no uploads required. Fast local processing keeps your videos private and secure.",
+          },
+          {
+            icon: ICONS.share,
+            title: "Organize & Share",
+            description:
+              "Review extracted images in a built-in library with date groups and batch folders. Share or save directly to Photos.",
+          },
+        ],
+      });
+    </script>
+  </body>
+</html>

@@ -409,9 +409,9 @@
   },
   {
     "title": "Video to Photo Converter",
-    "description": "Extract photos and frames from videos.",
+    "description": "Extract frames from video as JPEG, PNG, or WEBP with interval or manual capture.",
     "icon": "https://play-lh.googleusercontent.com/E8ZeHIKQFrCi9yW8pEABEMQ2S1acvISeiHhSVCLmgVJ1-vwzD5zmbS_tMp4cCeWkO0a7r3tqSHUS1hG89x2eJi0=w480-h960-rw",
-    "link": "https://play.google.com/store/apps/details?id=video.to.image.app"
+    "link": "apps/video-to-photo-converter/"
   },
   {
     "title": "Video to Text Converter",
