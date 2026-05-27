@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <title></title>
+    <link rel="stylesheet" href="../../css/app-page.css" />
+  </head>
+  <body>
+    <div id="app-root"></div>
+    <script src="../../js/app-page.js"></script>
+    <script>
+      renderAppPage({
+        appName: "Video to PDF Converter Pro",
+        title: "Video to PDF Converter Pro | Convert Video to PDF",
+        description:
+          "Video to PDF Converter Pro - Extract frames from video and build multi-page PDFs. Interval, frame count, or manual capture on iPhone and iPad.",
+        tagline:
+          "Convert video to PDF with frame extraction, page reordering, and full layout control — offline on your device.",
+        featureTitle: "Convert Video to PDF",
+        appStoreUrl:
+          "https://apps.apple.com/in/app/video-to-pdf-converter-pro/id6771997784",
+        playStoreUrl:
+          "https://play.google.com/store/apps/details?id=video.to.pdf",
+        colors: {
+          primary: "#6366f1",
+          secondary: "#4f46e5",
+          shadow: "rgba(99, 102, 241, 0.15)",
+        },
+        highlights: [
+          { number: "3", label: "Capture Modes" },
+          { number: "A4/Letter+", label: "Page Sizes" },
+          { number: "Reorder", label: "PDF Pages" },
+          { number: "100%", label: "Offline & Private" },
+        ],
+        features: [
+          {
+            icon: ICONS.clock,
+            title: "Interval Capture",
+            description:
+              "Extract frames from video on a schedule across the clip. Build a multi-page PDF from lectures, tutorials, and long recordings automatically.",
+          },
+          {
+            icon: ICONS.layers,
+            title: "Frame Count Mode",
+            description:
+              "Spread captures evenly across the timeline to create a balanced PDF from video with a set number of pages.",
+          },
+          {
+            icon: ICONS.video,
+            title: "Manual Frame Capture",
+            description:
+              "Pause, scrub, and capture exact frames on demand. Perfect for highlights, how-to content, and precise stills before you create PDF.",
+          },
+          {
+            icon: ICONS.gridSquares,
+            title: "Review & Reorder Pages",
+            description:
+              "Preview every frame in the pages grid and swap page order so your final document reads in the right sequence.",
+          },
+          {
+            icon: ICONS.settings,
+            title: "PDF Layout Options",
+            description:
+              "Choose A4, Letter, Legal, and more. Set orientation, fit/fill/stretch scaling, margins, page numbers, image quality, and optional password protection.",
+          },
+          {
+            icon: ICONS.fileText,
+            title: "My PDFs Library",
+            description:
+              "Every export lands in My PDFs with date grouping, preview, share, rename, and delete. Open password-protected files with an unlock prompt.",
+          },
+        ],
+      });
+    </script>
+  </body>
+</html>

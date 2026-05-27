@@ -414,10 +414,10 @@
     "link": "apps/video-to-photo-converter/"
   },
   {
-    "title": "Video to PDF Converter",
+    "title": "Video to PDF Converter Pro",
     "description": "Convert video to multi-page PDF documents with interval, count, or manual frame capture.",
     "icon": "https://play-lh.googleusercontent.com/W5G4l-lFvqhXqJ-8dV1Jns33dGw4jSphIm70LLZOTQhSkWHgLh5VwLEnX4lmpNNaQZr-f_9KtscEEFNNRpOc2w=w480-h960-rw",
-    "link": "https://play.google.com/store/apps/details?id=video.to.pdf"
+    "link": "apps/video-to-pdf-converter/"
   },
   {
     "title": "Video to Text Converter",
