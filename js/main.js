@@ -7,6 +7,21 @@ function appLinkAttrs(link) {
 
 // Load apps from JSON and render grid
 document.addEventListener("DOMContentLoaded", function () {
+  const iosStat = document.querySelector(
+    'a.stat-card.stat-link[href="ios/"] .stat-number',
+  );
+  if (iosStat) {
+    fetch("ios/index.html")
+      .then((response) => response.text())
+      .then((html) => {
+        const count = (html.match(/class="app-card"/g) || []).length;
+        if (count > 0) {
+          iosStat.textContent = String(count);
+        }
+      })
+      .catch(() => {});
+  }
+
   const appsGrid = document.getElementById("apps-grid");
   if (appsGrid) {
     fetch("data/apps.json")

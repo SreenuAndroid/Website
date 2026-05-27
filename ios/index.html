@@ -494,7 +494,7 @@
 
         <div class="stats-row">
           <div class="stat-item">
-            <div class="stat-number">17</div>
+            <div class="stat-number">18</div>
             <div class="stat-label">Apps Available</div>
           </div>
           <div class="stat-item">
@@ -1345,6 +1345,14 @@
         const savedTheme = localStorage.getItem("theme");
         if (savedTheme) {
           document.documentElement.setAttribute("data-theme", savedTheme);
+        }
+      })();
+
+      (function () {
+        const count = document.querySelectorAll(".apps-grid .app-card").length;
+        const stat = document.querySelector(".hero .stat-number");
+        if (stat && count > 0) {
+          stat.textContent = String(count);
         }
       })();
     </script>
