@@ -5,6 +5,12 @@ function appLinkAttrs(link) {
   return "";
 }
 
+function setTextIfChanged(el, next) {
+  if (el && el.textContent !== next) {
+    el.textContent = next;
+  }
+}
+
 // Load apps from JSON and render grid
 document.addEventListener("DOMContentLoaded", function () {
   const iosStat = document.querySelector(
@@ -16,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((html) => {
         const count = (html.match(/class="app-card"/g) || []).length;
         if (count > 0) {
-          iosStat.textContent = String(count);
+          setTextIfChanged(iosStat, String(count));
         }
       })
       .catch(() => {});
@@ -33,15 +39,17 @@ document.addEventListener("DOMContentLoaded", function () {
         const androidSectionBadge = document.querySelector("main .count-badge");
 
         const count = apps.length;
-        document.title = document.title.replace(/\d+(?= Apps)/, String(count));
+        const countStr = String(count);
 
-        if (androidHeroStat) {
-          androidHeroStat.textContent = String(count);
+        if (/\d+(?= Apps)/.test(document.title)) {
+          const titleCount = document.title.match(/(\d+)(?= Apps)/)?.[1];
+          if (titleCount !== countStr) {
+            document.title = document.title.replace(/\d+(?= Apps)/, countStr);
+          }
         }
 
-        if (androidSectionBadge) {
-          androidSectionBadge.textContent = `${count} Apps`;
-        }
+        setTextIfChanged(androidHeroStat, countStr);
+        setTextIfChanged(androidSectionBadge, `${count} Apps`);
 
         appsGrid.innerHTML = apps
           .map(
