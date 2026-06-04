@@ -35,9 +35,39 @@ function getCategory(app) {
   return "Other";
 }
 
+function parseIosApps(html) {
+  const doc = new DOMParser().parseFromString(html, "text/html");
+  return Array.from(doc.querySelectorAll(".app-card")).map((card) => {
+    const icon = card.querySelector(".app-icon")?.getAttribute("src") || "";
+    const titleLink = card.querySelector("h2 a");
+    const title = titleLink?.textContent.trim() || "";
+    const href = titleLink?.getAttribute("href") || "";
+    const description = card.querySelector("p")?.textContent.trim() || "";
+    const appStoreUrl =
+      card.querySelector('a[href*="apps.apple.com"]')?.getAttribute("href") ||
+      "";
+    const productLink = href.startsWith("../apps/")
+      ? href.replace("../", "")
+      : "";
+
+    return {
+      title,
+      description,
+      icon,
+      link: productLink || appStoreUrl,
+      platform: "ios",
+    };
+  });
+}
+
+function platformLabel(platform) {
+  return platform === "ios" ? "iOS & Mac" : "Android";
+}
+
 function renderAppCard(app) {
   return `
-    <div class="app" data-category="${getCategory(app)}" data-title="${app.title.toLowerCase()}">
+    <div class="app" data-category="${getCategory(app)}" data-platform="${app.platform}" data-title="${app.title.toLowerCase()}">
+      <span class="platform-tag ${app.platform}">${platformLabel(app.platform)}</span>
       <img src="${app.icon}" alt="${app.title} Icon" loading="lazy" />
       <h2>${app.title}</h2>
       <p>${app.description}</p>
@@ -51,6 +81,7 @@ function renderFeaturedCard(app) {
     <a href="${app.link}" class="featured-app"${appLinkAttrs(app.link)}>
       <img src="${app.icon}" alt="${app.title} Icon" loading="lazy" />
       <div class="featured-app-info">
+        <span class="platform-tag ${app.platform}">${platformLabel(app.platform)}</span>
         <h3>${app.title}</h3>
         <p>${app.description}</p>
         <span>View product →</span>
@@ -59,23 +90,22 @@ function renderFeaturedCard(app) {
   `;
 }
 
-function updateCounts(count) {
-  const countStr = String(count);
+function updateCounts(androidCount, iosCount) {
+  const total = androidCount + iosCount;
 
-  if (/\d+(?= Apps)/.test(document.title)) {
-    const titleCount = document.title.match(/(\d+)(?= Apps)/)?.[1];
-    if (titleCount !== countStr) {
-      document.title = document.title.replace(/\d+(?= Apps)/, countStr);
-    }
-  }
+  document.title = `Modern Mobile Tools - ${total} Apps for Android, iOS & Mac`;
 
   setTextIfChanged(
-    document.querySelector(".hero .stats-container .stat-number"),
-    countStr,
+    document.getElementById("android-count"),
+    String(androidCount),
   );
-  setTextIfChanged(document.getElementById("android-count"), countStr);
-  setTextIfChanged(document.querySelector(".count-badge"), `${count} Apps`);
-  setTextIfChanged(document.getElementById("about-app-count"), `${count}+`);
+  setTextIfChanged(document.getElementById("ios-count"), String(iosCount));
+  setTextIfChanged(document.querySelector(".count-badge"), `${total} Apps`);
+  setTextIfChanged(
+    document.getElementById("about-android-count"),
+    `${androidCount}+`,
+  );
+  setTextIfChanged(document.getElementById("about-ios-count"), `${iosCount}+`);
 }
 
 function renderCategories(apps) {
@@ -106,12 +136,23 @@ function renderCategories(apps) {
     .join("");
 }
 
+function renderPlatformPills() {
+  const container = document.getElementById("platform-pills");
+  if (!container) return;
+
+  container.innerHTML = `
+    <button class="filter-pill active" data-platform="all" type="button">All Platforms</button>
+    <button class="filter-pill" data-platform="android" type="button">Android</button>
+    <button class="filter-pill" data-platform="ios" type="button">iOS &amp; Mac</button>
+  `;
+}
+
 function renderFilterPills(categories) {
   const container = document.getElementById("filter-pills");
   if (!container) return;
 
   container.innerHTML = `
-    <button class="filter-pill active" data-filter="all" type="button">All</button>
+    <button class="filter-pill active" data-filter="all" type="button">All Categories</button>
     ${categories
       .map(
         ([name]) =>
@@ -121,7 +162,7 @@ function renderFilterPills(categories) {
   `;
 }
 
-function filterApps(query, category) {
+function filterApps(query, category, platform) {
   const cards = document.querySelectorAll("#apps-grid .app");
   const noResults = document.getElementById("no-results");
   let visible = 0;
@@ -129,10 +170,12 @@ function filterApps(query, category) {
   cards.forEach((card) => {
     const title = card.dataset.title || "";
     const cat = card.dataset.category || "";
+    const appPlatform = card.dataset.platform || "";
     const matchesSearch = !query || title.includes(query.toLowerCase());
     const matchesCategory = category === "all" || cat === category;
+    const matchesPlatform = platform === "all" || appPlatform === platform;
 
-    if (matchesSearch && matchesCategory) {
+    if (matchesSearch && matchesCategory && matchesPlatform) {
       card.classList.remove("hidden");
       visible++;
     } else {
@@ -145,12 +188,18 @@ function filterApps(query, category) {
   }
 }
 
-function setActiveFilter(category) {
-  document.querySelectorAll(".filter-pill").forEach((pill) => {
+function setActiveCategoryFilter(category) {
+  document.querySelectorAll("#filter-pills .filter-pill").forEach((pill) => {
     pill.classList.toggle("active", pill.dataset.filter === category);
   });
   document.querySelectorAll(".category-card").forEach((card) => {
     card.classList.toggle("active", card.dataset.category === category);
+  });
+}
+
+function setActivePlatformFilter(platform) {
+  document.querySelectorAll("#platform-pills .filter-pill").forEach((pill) => {
+    pill.classList.toggle("active", pill.dataset.platform === platform);
   });
 }
 
@@ -166,20 +215,30 @@ function initCatalogFilters(apps) {
   );
 
   renderCategories(apps);
+  renderPlatformPills();
   renderFilterPills(sorted);
 
   let activeCategory = "all";
+  let activePlatform = "all";
   let searchQuery = "";
 
   function applyFilters() {
-    filterApps(searchQuery, activeCategory);
+    filterApps(searchQuery, activeCategory, activePlatform);
   }
+
+  document.getElementById("platform-pills")?.addEventListener("click", (e) => {
+    const pill = e.target.closest(".filter-pill");
+    if (!pill) return;
+    activePlatform = pill.dataset.platform;
+    setActivePlatformFilter(activePlatform);
+    applyFilters();
+  });
 
   document.getElementById("filter-pills")?.addEventListener("click", (e) => {
     const pill = e.target.closest(".filter-pill");
     if (!pill) return;
     activeCategory = pill.dataset.filter;
-    setActiveFilter(activeCategory);
+    setActiveCategoryFilter(activeCategory);
     applyFilters();
     document.getElementById("products")?.scrollIntoView({ behavior: "smooth" });
   });
@@ -188,7 +247,7 @@ function initCatalogFilters(apps) {
     const card = e.target.closest(".category-card");
     if (!card) return;
     activeCategory = card.dataset.category;
-    setActiveFilter(activeCategory);
+    setActiveCategoryFilter(activeCategory);
     applyFilters();
     document.getElementById("products")?.scrollIntoView({ behavior: "smooth" });
   });
@@ -224,42 +283,36 @@ function initHeader() {
 document.addEventListener("DOMContentLoaded", function () {
   initHeader();
 
-  const iosStat = document.querySelector(
-    'a.stat-card.stat-link[href="ios/"] .stat-number',
-  );
-  if (iosStat) {
+  const appsGrid = document.getElementById("apps-grid");
+  if (!appsGrid) return;
+
+  Promise.all([
+    fetch("data/apps.json").then((response) => response.json()),
     fetch("ios/index.html")
       .then((response) => response.text())
-      .then((html) => {
-        const count = (html.match(/class="app-card"/g) || []).length;
-        if (count > 0) {
-          setTextIfChanged(iosStat, String(count));
-          setTextIfChanged(document.getElementById("ios-count"), String(count));
-        }
-      })
-      .catch(() => {});
-  }
+      .then(parseIosApps),
+  ])
+    .then(([androidApps, iosApps]) => {
+      const android = androidApps.map((app) => ({
+        ...app,
+        platform: "android",
+      }));
+      const allApps = [...android, ...iosApps];
 
-  const appsGrid = document.getElementById("apps-grid");
-  if (appsGrid) {
-    fetch("data/apps.json")
-      .then((response) => response.json())
-      .then((apps) => {
-        updateCounts(apps.length);
+      updateCounts(android.length, iosApps.length);
 
-        const featured = apps.filter((app) => app.link.startsWith("apps/"));
-        const featuredGrid = document.getElementById("featured-grid");
-        if (featuredGrid) {
-          featuredGrid.innerHTML = featured.map(renderFeaturedCard).join("");
-        }
+      const featured = allApps.filter((app) => app.link.startsWith("apps/"));
+      const featuredGrid = document.getElementById("featured-grid");
+      if (featuredGrid) {
+        featuredGrid.innerHTML = featured.map(renderFeaturedCard).join("");
+      }
 
-        appsGrid.innerHTML = apps.map(renderAppCard).join("");
-        initCatalogFilters(apps);
-      })
-      .catch((error) => {
-        console.error("Error loading apps:", error);
-      });
-  }
+      appsGrid.innerHTML = allApps.map(renderAppCard).join("");
+      initCatalogFilters(allApps);
+    })
+    .catch((error) => {
+      console.error("Error loading apps:", error);
+    });
 });
 
 function toggleTheme() {
