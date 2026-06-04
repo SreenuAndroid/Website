@@ -171,17 +171,44 @@
 
       .contact-info p {
         color: var(--text-secondary);
-        margin-bottom: 8px;
+        margin-bottom: 12px;
       }
 
-      .contact-info a {
+      .contact-detail {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        padding-top: 12px;
+        margin-top: 4px;
+        border-top: 1px solid var(--card-border);
+      }
+
+      .contact-label {
+        font-size: 0.68rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
         color: var(--accent-color);
-        text-decoration: none;
-        font-weight: 500;
       }
 
-      .contact-info a:hover {
+      .contact-detail a {
+        color: var(--text-primary);
+        font-weight: 500;
+        font-size: 0.95rem;
+        text-decoration: none;
+      }
+
+      .contact-detail a:hover {
+        color: var(--accent-color);
         text-decoration: underline;
+      }
+
+      .contact-info address {
+        font-style: normal;
+        color: var(--text-primary);
+        line-height: 1.7;
+        font-size: 0.95rem;
+        font-weight: 500;
       }
 
       .faq-list {
@@ -364,9 +391,12 @@
                 For questions, feedback, or technical issues with any of our
                 apps.
               </p>
-              <a href="mailto:fairappsmobile@gmail.com"
-                >fairappsmobile@gmail.com</a
-              >
+              <div class="contact-detail">
+                <span class="contact-label">Email</span>
+                <a href="mailto:fairappsmobile@gmail.com"
+                  >fairappsmobile@gmail.com</a
+                >
+              </div>
             </div>
           </div>
 
@@ -411,6 +441,31 @@
               <a href="mailto:fairappsmobile@gmail.com?subject=Bug Report"
                 >Report a Bug</a
               >
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </div>
+            <div class="contact-info">
+              <h3>Office Address</h3>
+              <p>Visit or write to us at our Hyderabad office.</p>
+              <div class="contact-detail">
+                <span class="contact-label">Address</span>
+                <address>
+                  8-415/136, Sapthagiri Colony<br />
+                  Miyapur Allwyn, Road No. 1<br />
+                  Hyderabad, Telangana
+                </address>
+              </div>
             </div>
           </div>
 
