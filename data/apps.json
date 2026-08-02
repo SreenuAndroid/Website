@@ -354,10 +354,10 @@
     "link": "https://play.google.com/store/apps/details?id=video.cutter.app"
   },
   {
-    "title": "Video Merger - Merge Videos",
-    "description": "Merge multiple video files into one.",
-    "icon": "https://play-lh.googleusercontent.com/ZK2pZqLrs264vn786U_AmJUbs5XwEAYFFwyoJn3ryoMuzJsc0ZDYExsfhaAmWnaqOjhKv7QwlQ0mFja1wVNwLg=w480-h960-rw",
-    "link": "https://play.google.com/store/apps/details?id=video.merger.app"
+    "title": "Video Merger & Joiner",
+    "description": "Merge and join videos offline with sequence, side-by-side, and stacked layouts.",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ee/84/4b/ee844bdb-94d3-c03c-95fa-41b86504464f/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+    "link": "apps/video-merger/"
   },
   {
     "title": "Video Muter - Silent Video",
@@ -448,6 +448,12 @@
     "description": "Convert WAV audio files to MP3 format.",
     "icon": "https://play-lh.googleusercontent.com/mHFElQM8cHhP0pgwND-I1sw5W41Y_OGtLlOk_zBx-WBhyPZQdXCKviKHq5E6MnPltaad2Dkb9a2PKXuEFr5X=w480-h960-rw",
     "link": "https://play.google.com/store/apps/details?id=wav.to.mp3"
+  },
+  {
+    "title": "WhatsApp Video Compressor",
+    "description": "Compress videos for WhatsApp sharing.",
+    "icon": "https://play-lh.googleusercontent.com/tCuoJ0EU6k_wUX45BSId4-fXgEvtck-YHtSUE-KLhE5L9yOv-wQG7dDXaHkApx6EmBOT6qOyKjz0iyH4Ry49=w240-h480-rw",
+    "link": "https://play.google.com/store/apps/details?id=whatsapp.video.compressor"
   },
   {
     "title": "Wma to Mp3 Converter",

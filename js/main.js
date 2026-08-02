@@ -40,7 +40,12 @@ function parseIosApps(html) {
   return Array.from(doc.querySelectorAll(".app-card")).map((card) => {
     const icon = card.querySelector(".app-icon")?.getAttribute("src") || "";
     const titleLink = card.querySelector("h2 a");
-    const title = titleLink?.textContent.trim() || "";
+    const titleHeading = card.querySelector("h2");
+    const title = (
+      titleLink?.textContent ||
+      titleHeading?.textContent ||
+      ""
+    ).trim();
     const href = titleLink?.getAttribute("href") || "";
     const description = card.querySelector("p")?.textContent.trim() || "";
     const appStoreUrl =
