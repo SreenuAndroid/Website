@@ -348,10 +348,10 @@
     "link": "https://play.google.com/store/apps/details?id=video.cropper.app"
   },
   {
-    "title": "Video Cutter and Merger",
-    "description": "Cut and merge video files with ease.",
-    "icon": "https://lh3.googleusercontent.com/y3XstCgiJjvhPKPCCmnJwfFvVFm7MBDzbwxt3-xM1B5pyhuZcwit4wG721ZuHMAwgKRqlA0nC_jRCIu7eAbcyA",
-    "link": "https://play.google.com/store/apps/details?id=video.cutter.app"
+    "title": "Video Cutter & Trimmer",
+    "description": "Cut, trim, and split videos offline with frame timeline and high-quality export.",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/a3/56/57/a3565793-6010-da62-d398-812caa182eb2/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+    "link": "apps/video-cutter-trimmer/"
   },
   {
     "title": "Video Merger & Joiner",
