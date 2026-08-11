@@ -330,10 +330,22 @@
     "link": "https://play.google.com/store/apps/details?id=tambola.number.caller"
   },
   {
+    "title": "Telugu Devotional Songs",
+    "description": "Listen to Telugu devotional songs and bhajans.",
+    "icon": "https://play-lh.googleusercontent.com/Yslqj-e6CCoC_RYE9HUhZ58_1idImm7GIrlRNH-FeuF08AeJCH0iFziUkcPKvVDifVeievsy4ysp8VzfmQ8U=w480-h960-rw",
+    "link": "https://play.google.com/store/apps/details?id=devotional.songs.app"
+  },
+  {
     "title": "Text to Voice - TTS Converter",
     "description": "Convert text to natural speech audio.",
     "icon": "https://play-lh.googleusercontent.com/N-3vbSdvRsqscAMgAVxxmR3m9X2HCxjsFvnENb6dEP8g_zz0UoeaC3Iko9vlP8A5PFSHj_xp4YuGRmcLztHWarY=w480-h960-rw",
     "link": "apps/text-to-voice-converter/"
+  },
+  {
+    "title": "Vaddi Lekkalu - Interest Calculator",
+    "description": "Calculate vaddi (interest) easily in Telugu language.",
+    "icon": "https://play-lh.googleusercontent.com/iImcfHY793oGWYr7k6IpkOzQi-A9_c3_Igja5q-pXM9306WDm7tjWU9Kut435Rpatkp27tw0DJUfhVElukkc=w480-h960-rw",
+    "link": "https://play.google.com/store/apps/details?id=vaddi.lekkalu.app"
   },
   {
     "title": "Video Compressor - Reduce Size",
