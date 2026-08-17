@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <title></title>
+    <link rel="stylesheet" href="../../css/app-page.css" />
+  </head>
+  <body>
+    <div id="app-root"></div>
+    <script src="../../js/app-page.js"></script>
+    <script>
+      renderAppPage({
+        appName: "MP4 to MP3 Converter",
+        title: "MP4 to MP3 Converter - Extract Audio from Video",
+        description:
+          "Convert MP4 video to MP3 audio instantly. Trim clips, set custom bitrate, and edit ID3 tags. Fast, offline, and private on Android & iOS.",
+        tagline:
+          "Extract MP3 audio from any MP4 video — trim, tag, and export in seconds",
+        featureTitle: "Convert MP4 to MP3",
+        appStoreUrl:
+          "https://apps.apple.com/in/app/mp4-to-mp3-converter-pro/id6799347614",
+        playStoreUrl:
+          "https://play.google.com/store/apps/details?id=mp4.to.mp3.converter",
+        colors: {
+          primary: "#f59e0b",
+          secondary: "#ef4444",
+          shadow: "rgba(245, 158, 11, 0.15)",
+        },
+        highlights: [
+          { number: "Fast", label: "Conversion" },
+          { number: "100%", label: "Offline & Private" },
+          { number: "HD", label: "Audio Quality" },
+          { number: "2", label: "Platforms" },
+        ],
+        features: [
+          {
+            icon: ICONS.music,
+            title: "MP4 to MP3 Conversion",
+            description:
+              "Extract high-quality MP3 audio from any MP4 video file in just a few taps.",
+          },
+          {
+            icon: ICONS.scissors,
+            title: "Trim & Cut Clips",
+            description:
+              "Trim the exact segment you need before converting — perfect for songs and ringtones.",
+          },
+          {
+            icon: ICONS.sliders,
+            title: "Custom Bitrate",
+            description:
+              "Choose your preferred bitrate to balance audio quality and file size.",
+          },
+          {
+            icon: ICONS.edit,
+            title: "Edit ID3 Tags",
+            description:
+              "Add or edit title, artist, and album tags so your MP3s stay organized in any music app.",
+          },
+          {
+            icon: ICONS.offline,
+            title: "Offline Processing",
+            description:
+              "All conversions happen on your device. No uploads required, ensuring complete privacy and fast processing.",
+          },
+          {
+            icon: ICONS.share,
+            title: "Easy Sharing",
+            description:
+              "Save converted songs and ringtones directly to your device or share them instantly.",
+          },
+        ],
+      });
+    </script>
+  </body>
+</html>
