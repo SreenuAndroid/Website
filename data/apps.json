@@ -270,6 +270,12 @@
     "link": "apps/mp4-to-mp3-converter/"
   },
   {
+    "title": "Music Speed Changer",
+    "description": "Speed up or slow down music tracks without changing pitch.",
+    "icon": "https://play-lh.googleusercontent.com/ZiEF4Q_C8UqujDHcxWl3uJc0aoP0SSy3Ow-bftQKGsbRmbYPsTVT8XDKyf4_kT5y49oB27VV73Xsju5KyyRf8A=w480-h960-rw",
+    "link": "https://play.google.com/store/apps/details?id=audio.speed.changer"
+  },
+  {
     "title": "OGG to MP3 Converter",
     "description": "Convert OGG audio files to MP3 format.",
     "icon": "https://play-lh.googleusercontent.com/W3Lwl2gfVFA8d6zOzLR7XIZfWgSVBrkv9SJiTaUK3TDtUhJg0A5rXjfRX78NOfMcdMEda51rXtFryJT8GtcaNw=w480-h960-rw",
