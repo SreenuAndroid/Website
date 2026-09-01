@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <title></title>
+    <link rel="stylesheet" href="../../css/app-page.css" />
+  </head>
+  <body>
+    <div id="app-root"></div>
+    <script src="../../js/app-page.js"></script>
+    <script>
+      renderAppPage({
+        appName: "Video Speed Editor - Changer",
+        title: "Video Speed Editor - Slow Motion & Fast Forward",
+        description:
+          "Change video speed from 0.1x to 8x offline. Full video, presets, or custom play-and-tap speed ramps for slow motion, time-lapse, and fast-forward effects.",
+        tagline:
+          "Slow motion, fast forward, or a custom speed ramp — 0.1x to 8x, offline.",
+        featureTitle: "Change Video Speed",
+        appStoreUrl:
+          "https://apps.apple.com/in/app/video-speed-editor-changer/id6802033863",
+        playStoreUrl:
+          "https://play.google.com/store/apps/details?id=video.speed.editor",
+        colors: {
+          primary: "#a855f7",
+          secondary: "#d946ef",
+          shadow: "rgba(168, 85, 247, 0.15)",
+        },
+        highlights: [
+          { number: "0.1x-8x", label: "Speed Range" },
+          { number: "12", label: "Speed-Ramp Presets" },
+          { number: "100%", label: "Offline & Private" },
+          { number: "0", label: "Watermarks" },
+        ],
+        features: [
+          {
+            icon: ICONS.zap,
+            title: "Full Video Speed Control",
+            description:
+              "Apply one speed to the entire clip, from 0.1x slow motion to 8x fast forward, with the output length shown instantly.",
+          },
+          {
+            icon: ICONS.layers,
+            title: "12 Speed-Ramp Presets",
+            description:
+              "Slow Intro, Fast Middle, Dramatic, Pulse, Timelapse, and more — each previews on a color-coded timeline before you commit.",
+          },
+          {
+            icon: ICONS.sliders,
+            title: "Custom Play & Tap Segments",
+            description:
+              "Play the video and tap a speed at any point, or drag the timeline instead. Every segment stays editable and deletable afterward.",
+          },
+          {
+            icon: ICONS.clock,
+            title: "Natural Audio Timing",
+            description:
+              "Audio speed adjusts automatically with the video, so slowed or sped-up clips never sound chipmunked.",
+          },
+          {
+            icon: ICONS.video,
+            title: "Hardware-Accelerated Encoding",
+            description:
+              "Most clips process in seconds thanks to hardware-accelerated encoding, even with multiple speed segments.",
+          },
+          {
+            icon: ICONS.offline,
+            title: "Fully Offline & Private",
+            description:
+              "Everything happens on your device — no uploads, no account, and no watermark on your finished video.",
+          },
+        ],
+      });
+    </script>
+  </body>
+</html>

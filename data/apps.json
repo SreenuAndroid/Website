@@ -387,7 +387,7 @@
     "title": "Video Muter - Silent Video",
     "description": "Remove audio from videos to create silent clips.",
     "icon": "https://play-lh.googleusercontent.com/7NzysGLc0cSvN3UgvxaindTpkl9nFvr6w9l5BkKe6FQFKYH8Fhl4us9y2_gPXg73659QFl_dYhkSb0GJCfbW8pw=w480-h960-rw",
-    "link": "https://play.google.com/store/apps/details?id=video.muter.app"
+    "link": "apps/video-sound-remover/"
   },
   {
     "title": "Video Reverser",
@@ -405,7 +405,7 @@
     "title": "Video Speed Editor",
     "description": "Change video playback speed with ease.",
     "icon": "https://play-lh.googleusercontent.com/0mQddIEJapbd3OePqKTZkJR3_o5CHoPduJKH7PpYXVNivdajg4dmiCRndGgSHBRhFm_QL_nyRx723lVHPpG5=w480-h960-rw",
-    "link": "https://play.google.com/store/apps/details?id=video.speed.editor"
+    "link": "apps/video-speed-editor/"
   },
   {
     "title": "Video Splitter - Split Videos",

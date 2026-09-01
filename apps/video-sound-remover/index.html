@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <title></title>
+    <link rel="stylesheet" href="../../css/app-page.css" />
+  </head>
+  <body>
+    <div id="app-root"></div>
+    <script src="../../js/app-page.js"></script>
+    <script>
+      renderAppPage({
+        appName: "Video Sound Remover Pro",
+        title: "Video Sound Remover - Mute & Remove Audio Offline",
+        description:
+          "Remove or mute audio from any video offline. Mute All, Mute Part, Remove Part, or Keep Part — fast, no re-encoding, batch-friendly, and completely private.",
+        tagline:
+          "Mute, silence, or cut audio from any video — four modes, offline.",
+        featureTitle: "Remove Video Sound",
+        appStoreUrl:
+          "https://apps.apple.com/in/app/video-sound-remover-pro/id6801945497",
+        playStoreUrl:
+          "https://play.google.com/store/apps/details?id=video.muter.app",
+        colors: {
+          primary: "#475569",
+          secondary: "#ef4444",
+          shadow: "rgba(71, 85, 105, 0.15)",
+        },
+        highlights: [
+          { number: "4", label: "Sound-Removal Modes" },
+          { number: "0", label: "Quality Loss" },
+          { number: "100%", label: "Offline & Private" },
+          { number: "Fast", label: "No Re-encoding" },
+        ],
+        features: [
+          {
+            icon: ICONS.micOff,
+            title: "Mute All",
+            description:
+              "Strip the audio from the entire video in one tap. The video stream is copied without re-encoding, so it stays fast and lossless.",
+          },
+          {
+            icon: ICONS.sliders,
+            title: "Mute Part",
+            description:
+              "Keep the whole video but silence only a selected time range, while the rest of the audio plays normally.",
+          },
+          {
+            icon: ICONS.scissors,
+            title: "Remove Part",
+            description:
+              "Cut a selected time range out of the video entirely, useful for removing a section with bad audio along with its video.",
+          },
+          {
+            icon: ICONS.layers,
+            title: "Keep Part",
+            description:
+              "Keep only a selected, muted time range from the video and discard everything else — a quick way to pull out a silent clip.",
+          },
+          {
+            icon: ICONS.video,
+            title: "Frame-Thumbnail Timeline",
+            description:
+              "Drag handles on a frame-thumbnail timeline, or enter exact times manually, with a live preview before processing.",
+          },
+          {
+            icon: ICONS.offline,
+            title: "Batch & Offline Processing",
+            description:
+              "Import several videos and pick a mode for each. Every file stays on your device — nothing is uploaded.",
+          },
+        ],
+      });
+    </script>
+  </body>
+</html>
